@@ -1,11 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,600;1,800&display=swap');
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+body,html
+{
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +20,31 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.text-shadow-special
+{
+  text-shadow: rgb(0, 162, 255) 1px 1px
+}
+.svg-color-fill
+{
+  fill:rgb(2 132 199)!important
+}
+/* Colors */
+.blue-principal{}
+.blue-two
+{
+  color:#2977D5
+}
+.cyan-principal{}
+.gray-principal{}
+.black-principal{}
+
+
+.font-poppins
+{
+  font-family: 'Poppins', sans-serif;
+}
+.font-poppins-100
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
 }
