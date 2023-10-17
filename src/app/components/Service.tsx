@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
+import ButtonContact from './ButtonContact'
 
 type Props =
     {
-        image: StaticImageData,
+        image: StaticImageData | string,
         name: string,
         text: string,
     }
@@ -11,12 +12,34 @@ type Props =
 const Service = (props: Props) => {
     const { image, name, text } = props
     return (
-        <div className=' p-5  rounded-lg min-h-[20rem] shadow-[rgba(56,_189,_248,_0.18)_0px_0px_16px] flex flex-col gap-4 '>
-            <Image src={image} alt={`ìmage-${name}`} className='w-20'></Image>
-            <h3 className='text-2xl font-bold text-sky-600 blue-two'>{name}</h3>
-            <p className='text-zinc-600 text-sm'>{text}</p>
+        <div className='flex flex-col'>
+            <div className="flex h-[18rem] lg:h-[24rem] items-center justify-center rounded card-service">
+                <div className="group h-[18rem] lg:h-[24rem] w-full rounded  ">
+                    <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                        <div className="absolute inset-0">
+                            <Image className=" h-[100%] md:h-[18rem] lg:h-[24rem] rounded-xl object-cover shadow-xl shadow-black/40" width={700} height={700} src={image} alt={name} />
+                        </div>
+                        <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-3 md:px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                            <div className="flex min-h-full flex-col items-center justify-center">
+                                <h1 className="text-3xl font-bold pb-2">{name}</h1>
+                                {/* <p className="text-lg pb-6">En que consiste </p> */}
+                                <p className="text-base pb-10">{text}</p>
+                                <ButtonContact></ButtonContact>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 className=' none-name-card text-zinc-50 text-2xl font-poppins font-semibold text-center pt-5'>{name}</h2>
         </div>
     )
 }
+
+
+
+
+
+
+
 
 export default Service

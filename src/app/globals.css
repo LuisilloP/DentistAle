@@ -10,6 +10,8 @@
 body,html
 {
   overflow-x: hidden;
+  /* background: #1f1f1f; */
+  background: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(82,82,82,1) 70%, rgba(156,156,156,1) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +26,10 @@ body,html
 {
   text-shadow: rgb(0, 162, 255) 1px 1px
 }
+.text-shadow-special-two
+{
+  text-shadow: #ead7c0 1px 1px !important
+}
 .svg-color-fill
 {
   fill:rgb(2 132 199)!important
@@ -34,10 +40,35 @@ body,html
 {
   color:#2977D5
 }
-.cyan-principal{}
-.gray-principal{}
-.black-principal{}
+.aqua-principal
+{
+  color:#00ffff;
+}
+.aqua-bg-principal
+{
+  background:#00ffff;
+}
+.gray-second
+{
+  background: #767676;
+}
+.gray-three
+{
+  background: #21201e;
+}
+.gray-text-three
+{
+  color:#21201e;
+}
 
+.color-beige
+{
+  background: #ada192;
+}
+.color-text-beige
+{
+  color: #ada192;
+}
 
 .font-poppins
 {
@@ -47,4 +78,44 @@ body,html
 {
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
+}
+.line-height-special
+{
+  line-height: 4rem ;
+}
+
+.text-size-2rm
+{
+  font-size: 2.3rem !important;
+}
+.card-service:hover .none-name-card
+{ 
+    display: none;
+}
+.card-service:hover .none-name-card
+{   animation-duration: 500ms;
+    animation-delay: 500ms;
+}
+/*IndexCard*/
+.cardIndex:hover .image-card
+{
+  transform: scale(1.20);
+
+}
+
+.clipath-card-special
+{
+   clip-path:polygon(0 3%, 100% 0, 100% 97%, 0 100%)
+}
+
+
+
+/*flayer*/
+.clip-path-one-f
+{
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0% 100%);
+}
+.clip-path-two-f
+{
+  clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
 }
