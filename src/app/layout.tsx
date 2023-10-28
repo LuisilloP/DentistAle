@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from "./layouts/Header"
 import Footer from "./layouts/Footer"
+import whatsappButton from "../../public/svg/whatsappButton.svg"
+import Image from 'next/image'
+import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,6 +22,7 @@ export default function RootLayout({
     <html lang="es">
 
       <body className={inter.className}>
+        <Link target='__blank' href={"https://wa.me/935886949?text=Hola,%20Estoy%20Interesado%20en%20tus%20servicios%20odontologicos%20"} className='w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80'><Image src={whatsappButton} alt="btn_whatsapp" className=' rounded-full '></Image></Link>
         <Header />
         {children}
         <Footer />

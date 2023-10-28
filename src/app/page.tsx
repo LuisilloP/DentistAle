@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import TextImagePrincipal from './sections/TextImagePrincipal'
-import BannerContact from './components/BannerContact'
 import Services from './sections/Services'
 import AboutMe from './components/AboutMe'
 import Index from './sections/Index'
 import BannerDent from './sections/BannerDent'
-
+import Contact from './sections/Contact'
+import GeneraInformation from './sections/GeneraInformation'
+import CellphoneNumber from './sections/CellphoneNumber'
+import Galery from './sections/Galery'
 export default function Home() {
   return (
     <main className=" bg-[]">
@@ -17,24 +19,33 @@ export default function Home() {
           <Index></Index>
         </div>
       </section>
-      {/* <section className='pt-10 md:pt-10'>
-        <hr className="h-px my-8 bg-sky-200 border-0 md:hidden"></hr>
-        <BannerContact></BannerContact>
-        <hr className="h-px my-8 bg-sky-200 border-0 md:hidden"></hr>
-      </section> */}
 
-      <section>
+      <section >
         <div className=''>
           <BannerDent></BannerDent>
         </div>
       </section>
-      <section className='max-w-7xl m-auto px-3 py-10'>
+      <section id='services' className='max-w-7xl m-auto px-3 py-10'>
         <Services></Services>
       </section>
-      <section className='color-beige'>
+      <section id='aboutme' className='color-beige'>
         <div className=' '>
           <AboutMe></AboutMe>
         </div>
+      </section>
+      <section id='contact' className='section-contact'>
+        <div className='max-w-7xl m-auto px-3 pt-14'>
+          <Contact></Contact>
+        </div>
+      </section>
+      <section>
+        <CellphoneNumber></CellphoneNumber>
+      </section>
+      <section>
+        <GeneraInformation></GeneraInformation>
+      </section>
+      <section>
+        <Galery></Galery>
       </section>
     </main>
   )

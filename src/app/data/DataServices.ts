@@ -36,4 +36,5 @@ const dataGeneral =
             text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, cumque voluptatibus. Quisquam voluptatibus perspiciatis ipsum voluptatem quod praesentium placeat totam consequatur laudantium, aspernatur voluptatum, eius nulla cupiditate labore. Voluptas, similique!"
         },
     ]
-export { dataGeneral, dataOrthodoncy }
+const urls = [['home', 'Principal'], ['services', 'Servicios'], ['aboutMe', 'Sobre mi'], ['contact', 'Contacto'], ['galery', 'Galeria']]
+export { dataGeneral, dataOrthodoncy, urls }

@@ -13,7 +13,7 @@ const Service = (props: Props) => {
     const { image, name, text } = props
     return (
         <div className='flex flex-col'>
-            <div className="flex h-[18rem] lg:h-[24rem] items-center justify-center rounded card-service">
+            <div className="flex h-[18rem] lg:h-[24rem] items-center justify-center rounded card-service cursor-pointer">
                 <div className="group h-[18rem] lg:h-[24rem] w-full rounded  ">
                     <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                         <div className="absolute inset-0">
@@ -23,14 +23,15 @@ const Service = (props: Props) => {
                             <div className="flex min-h-full flex-col items-center justify-center">
                                 <h1 className="text-3xl font-bold pb-2">{name}</h1>
                                 {/* <p className="text-lg pb-6">En que consiste </p> */}
-                                <p className="text-base pb-10">{text}</p>
+                                <p className="text-base pb-2 sm:pb-5 lg:pb-10">{text}</p>
                                 <ButtonContact></ButtonContact>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2 className=' none-name-card text-zinc-50 text-2xl font-poppins font-semibold text-center pt-5'>{name}</h2>
+            <p className=' button md:hidden text-white  pt-2 text-center font-bold'></p>
+            <h2 className=' none-name-card text-zinc-50 text-2xl font-poppins font-semibold text-center pt-2'>{name}</h2>
         </div>
     )
 }
