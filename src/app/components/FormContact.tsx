@@ -2,12 +2,15 @@
 import React, { ChangeEventHandler, useState } from 'react';
 import { FormData } from '../Interfaces';
 import validatorForm from '../functions/validatorForm';
-import { fireAlert } from '../sweetalert/messages';
+import { fireAlert, fireAlertWrong } from '../sweetalert/messages';
 const dataInitial: FormData =
 {
     name: '',
+    surname: '',
+    phone: '',
     mail: '',
     message: '',
+
 }
 const FormContact = () => {
     let send = false;
@@ -22,7 +25,9 @@ const FormContact = () => {
         const validationErrors = validatorForm(data)
         setErrors(validationErrors)
         if (!validationErrors.name && !validationErrors.message && !validationErrors.mail) send = true;
-        if (send) fireAlert(data)
+        if (send) { fireAlert(data) } else {
+            fireAlertWrong(validationErrors)
+        }
     }
 
     const clearMessageError = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -78,7 +83,9 @@ const FormContact = () => {
                 >Mensaje</label>
             </div>
 
-            <button type='submit' className=" w-full md:w-[10rem] bg-zinc-900 text-white py-2 px-4 text-sm] ">
+            <button type='submit' className=" w-full md:w-[10rem] bg-zinc-900 text-white py-2 px-4 text-sm] "
+
+            >
                 Agendar
             </button>
         </form>

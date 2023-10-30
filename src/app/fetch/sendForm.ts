@@ -1,7 +1,7 @@
 import { FormData } from '../Interfaces';
 export const sendForm = (formData: FormData): Promise<Response> => {
 
-    const { name, mail, message } = formData
+    const { name, mail, message, surname, phone } = formData
 
     const getResponse = fetch('https://formsubmit.co/ajax/trabajoluisaraya@gmail.com', {
         method: 'POST',
@@ -11,6 +11,8 @@ export const sendForm = (formData: FormData): Promise<Response> => {
         },
         body: JSON.stringify({
             name: name,
+            surname: surname,
+            phone: phone,
             mail: mail,
             message: message
         })

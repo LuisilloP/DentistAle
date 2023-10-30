@@ -20,7 +20,7 @@ const Header = () => {
     }, [])
 
     return (
-        <div className={` w-full fixed  md:px-10 px-7 top-0 left-0 z-50 ${MouseMoveY == 0 ? 'py-5 bg-black  ' : ' shadow-md py-3 color-beige'} ease-out duration-500 `}  >
+        <div className={` w-full fixed  md:px-10 px-7 top-0 left-0 z-50 ${MouseMoveY == 0 ? 'py-5 bg-black  ' : ' shadow-md py-1 color-beige'} ease-out duration-500 `}  >
             <div className=' flex md:flex items-center justify-between'>
                 <div className='font-bold text-2xl cursor-pointer flex items-center gap-1'>
                     <Image src={toothIconLogo} className='w-8' alt="icon"></Image>
@@ -35,7 +35,9 @@ const Header = () => {
                     {
                         urls.map((link, i) => (
                             <li key={i} className='md:ml-8 md:my-0 my-7 '>
-                                <a href={link[0]} className=' '>{link[1]}</a>
+                                <a className=' cursor-pointer '
+                                    onClick={() => { document.querySelector(`#${link[0]}`)?.scrollIntoView({ behavior: 'smooth', block: "start" }) }}
+                                >{link[1]}</a>
                             </li>))
                     }
                 </ul>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import TextImagePrincipal from './sections/TextImagePrincipal'
 import Services from './sections/Services'
-import AboutMe from './components/AboutMe'
+import AboutMe from './sections/AboutMe'
 import Index from './sections/Index'
 import BannerDent from './sections/BannerDent'
 import Contact from './sections/Contact'
@@ -11,7 +11,7 @@ import Galery from './sections/Galery'
 export default function Home() {
   return (
     <main className=" bg-[]">
-      <section className=' bg-black'>
+      <section id='principal' className=' bg-black'>
         <TextImagePrincipal />
       </section>
       <section className=''>
@@ -44,7 +44,7 @@ export default function Home() {
       <section>
         <GeneraInformation></GeneraInformation>
       </section>
-      <section>
+      <section id='galery' className='max-w-7xl m-auto px-3 py-10'>
         <Galery></Galery>
       </section>
     </main>

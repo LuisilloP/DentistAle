@@ -26,3 +26,22 @@ export const fireAlert = (data: FormData) => {
 
     })
 }
+export const fireAlertWrong = (data: FormData) => {
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 8000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: 'error',
+        html: ` ${data.name == "" ? "" : "<br>" + data.name} ${data.surname == "" ? "" : data.surname} ${data.phone == "" ? "" : data.phone} ${data.mail == "" ? "" : data.mail} ${data.message == "" ? "" : "<br>" + data.message} `,
+    })
+}

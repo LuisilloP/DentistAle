@@ -14,7 +14,9 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "sweetalert2": "^11.7.32"
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.32",
+    "swiper": "^11.0.3"
   },
   "devDependencies": {
     "@types/node": "latest",

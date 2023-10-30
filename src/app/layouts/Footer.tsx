@@ -28,8 +28,8 @@ const Footer = (props: Props) => {
                                 dataNav.map(nav =>
                                 (
                                     <li key={nav[0]}>
-                                        <a className='duration-special ease-out hover:ease-in lg:px-0 transition cursor-pointer hover:text-blue-600'
-                                            onClick={() => ScrollToView(nav[1])}
+                                        <a className='duration-special ease-out hover:ease-in lg:px-0 transition cursor-pointer hover:text-[#00ffff]'
+                                            onClick={() => ScrollToView(nav[0])}
                                         >{nav[1]}</a>
                                     </li>
 

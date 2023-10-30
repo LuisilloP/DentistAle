@@ -14,7 +14,7 @@ const BannerDent = (props: Props) => {
             <div className="absolute inset-0 z-10 bg-black bg-opacity-40"></div>
 
             {/* Contenido de texto */}
-            <h1 className="relative z-20 font-serif text-6xl text-white text-center font-bold">
+            <h1 className="relative z-20 font-serif text-5xl  md:text-6xl text-white text-center font-bold">
                 <q>La clave de la <span className='aqua-principal'>confianza</span>: una <span className='aqua-principal'>sonrisa saludable</span>.</q>
             </h1>
 
