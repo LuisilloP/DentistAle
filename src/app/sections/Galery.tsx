@@ -3,8 +3,6 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import SubTitle from '../components/SubTitle';
@@ -17,7 +15,7 @@ const Galery = (props: Props) => {
 
     return (
         <div className=''>
-            <h4 className='color-text-beige text-[14px] md:text-[13px] pb-5 lg:pb-0 md:pt-10 '>clinica</h4>
+            <h4 className='color-text-beige text-[14px] md:text-[13px]   md:pt-10 pb-2 '>clinica</h4>
             <SubTitle classAlter='text-[2.5rem]' text='Conoce el establecimiento'  ></SubTitle>
             <div className='pt-10'>
                 <Swiper
@@ -27,7 +25,7 @@ const Galery = (props: Props) => {
                         clickable: true,
                     }}
                     modules={[Pagination]}
-                    className="mySwiper h-[80vw] lg:h-[40vw] w-[90vw] lg:w-[80vw] lg:max-w-[80rem]"
+                    className="mySwiper h-[80vw] lg:h-[40vw] w-[90vw] lg:w-[80vw] lg:max-w-[80rem] cursor-pointer"
                 >
                     {data.map(image =>
                     (

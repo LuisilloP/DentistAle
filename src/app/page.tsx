@@ -8,6 +8,10 @@ import Contact from './sections/Contact'
 import GeneraInformation from './sections/GeneraInformation'
 import CellphoneNumber from './sections/CellphoneNumber'
 import Galery from './sections/Galery'
+import MyPatients from './sections/MyPatients'
+import Map from './sections/Map'
+
+
 export default function Home() {
   return (
     <main className=" bg-[]">
@@ -33,10 +37,16 @@ export default function Home() {
           <AboutMe></AboutMe>
         </div>
       </section>
-      <section id='contact' className='section-contact'>
+      <section id='galery' className='max-w-7xl m-auto px-3 py-10'>
+        <Galery></Galery>
+      </section>
+      <section id='contact' className='color-beige'>
         <div className='max-w-7xl m-auto px-3 pt-14'>
           <Contact></Contact>
         </div>
+      </section>
+      <section>
+        <MyPatients></MyPatients>
       </section>
       <section>
         <CellphoneNumber></CellphoneNumber>
@@ -44,8 +54,8 @@ export default function Home() {
       <section>
         <GeneraInformation></GeneraInformation>
       </section>
-      <section id='galery' className='max-w-7xl m-auto px-3 py-10'>
-        <Galery></Galery>
+      <section className=' md:px-10 '>
+        <Map></Map>
       </section>
     </main>
   )

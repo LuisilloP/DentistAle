@@ -15,7 +15,7 @@ const BannerDent = (props: Props) => {
 
             {/* Contenido de texto */}
             <h1 className="relative z-20 font-serif text-5xl  md:text-6xl text-white text-center font-bold">
-                <q>La clave de la <span className='aqua-principal'>confianza</span>: una <span className='aqua-principal'>sonrisa saludable</span>.</q>
+                <q>La clave de la <span className='gray-text-three'>confianza</span>: una <span className='gray-text-three'>sonrisa saludable</span>.</q>
             </h1>
 
             {/* Fondo de imagen con parallax */}

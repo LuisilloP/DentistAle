@@ -41,13 +41,15 @@ const TextImagePrincipal = (props: Props) => {
             </div>
             <div className='Principal-text flex flex-col gap-8 md:gap-16 px-3 pt-10 md:pt-0 '>
                 <div className='flex flex-col gap-4 md:gap-16'>
-                    <h3 className=' color-text-beige text-[14px] md:text-[13px]'>En la ciudad de Ovalle</h3>
-                    <h1 className='aqua-principal font-poppins font-semibold text-4xl md:text-6xl leading-[3.2rem]  md:leading-[4.5rem]'>Atención <span className='aqua-principal'>Odontológica</span> de primer nivel</h1>
-                    <p className=' text-zinc-200 text-[14px] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iure quam dolore ullam eos, possimus quia repellat nulla ex placeat cupiditate velit amet rerum itaque incidunt similique sint, iste ad?</p>
+                    <h3 className='text-white    text-[14px] md:text-[13px]'>En la ciudad de Ovalle</h3>
+                    <h1 className='color-text-beige font-poppins font-semibold text-4xl md:text-6xl leading-[3.2rem]  md:leading-[4.5rem]'>Atención <span className='text-color-beige'>Odontológica</span> de primer nivel</h1>
+                    <p className=' text-zinc-100 text-[15px] '>Un dentista en Ovalle, en sintonía con las inquietudes y necesidades de nuestros pacientes. Adoptamos un enfoque integral en la atención dental y proporcionamos tratamientos que se centran en resultados a largo plazo.<br></br><br></br>Nuestra clínica está comprometida en abordar la ansiedad dental al crear un ambiente relajante y al destacar la experiencia y precisión de nuestros odontólogos estéticos. Encuentra la sonrisa que exprese tu bienestar.</p>
                 </div>
                 <div className='flex gap-8  justify-between items-center '>
                     <ButtonContactShadow></ButtonContactShadow>
-                    <a className=' underline ude underline-offset-8 text-zinc-200 decoration-zinc-600 hover:cursor-pointer text-sm md:text-base' >nuestros servicios</a>
+                    <a
+                        onClick={() => { document.querySelector(`#services`)?.scrollIntoView({ behavior: 'smooth', block: "start" }) }}
+                        className=' underline ude underline-offset-8 text-zinc-200 decoration-zinc-600 hover:cursor-pointer text-sm md:text-base' >nuestros servicios</a>
                 </div>
             </div>
         </div >

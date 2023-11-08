@@ -25,7 +25,7 @@ const indexCard = (props: Props) => {
          text-white rounded-sm text-center cursor-pointer clipath-card-special `}>
             <Image src={image} alt={title} className='image-card w-20 h-20 m-auto transition ease-in-out mt-10 '></Image>
             <h2 className='text-4xl  pt-10  '>{title}</h2>
-            <p className='px-7 pt-10 leading-8 text-[15px] '>{text}</p>
+            <p className='px-7 pt-10 leading-8 text-[15px] text-gray-300 '>{text}</p>
             <button
                 onClick={() => {
 
