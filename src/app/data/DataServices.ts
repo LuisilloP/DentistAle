@@ -77,7 +77,7 @@ const dataRehabilitation =
 const dataFacial =
     [
         {
-            image: "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Facial%2Frino.jpg?alt=media&token=2a5ca54c-2f02-447d-8f42-1034785bc067", name: "Rinomodelacion ",
+            image: "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Facial%2Frino.jpg?alt=media&token=2a5ca54c-2f02-447d-8f42-1034785bc067", name: "Rinomodelacion",
             text: "Implica la inyección de ácido hialurónico en la nariz para mejorar su forma y apariencia. Es un procedimiento no quirúrgico que se realiza con anestesia local y ofrece resultados inmediatos."
         },
         {

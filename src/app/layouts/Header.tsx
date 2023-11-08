@@ -23,7 +23,7 @@ const Header = () => {
             <div className=' flex md:flex items-center justify-between'>
                 <div className='font-bold text-2xl cursor-pointer flex items-center gap-1'>
                     <Image src={toothIconLogo} className='w-12' alt="icon"></Image>
-                    <span className={`pl-1  ${MouseMoveY == 0 ? ' text-zinc-50' : "text-zinc-900"}`}>SBclinica Dental</span>
+                    <span className={`pl-1  ${MouseMoveY == 0 ? ' text-zinc-50' : "text-zinc-900"}`}>Clinica Dental SB</span>
                 </div>
                 <div onClick={() => setOpen(!open)} className=' text-black cursor-pointer md:hidden w-7 h-7'>
                     {

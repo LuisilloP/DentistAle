@@ -21,7 +21,7 @@ const Footer = (props: Props) => {
         <footer className=' bg-neutral-900 min-h-[5rem] mg-20 '>
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <Link href={"/"} className=' flex z-50 font-title items-center text-2xl uppercase'> <Image alt='logo' className='w-10' src={LogoF}></Image> <p className='text-white'>SBclinica Dental</p> </Link>
+                    <Link href={"/"} className=' flex z-50 font-title items-center text-2xl uppercase'> <Image alt='logo' className='w-10' src={LogoF}></Image> <p className='text-white'>Clinica Dental SB</p> </Link>
                     <div>
                         <ul className="flex gap-5 flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 pt-5 md:pt-0">
                             {
