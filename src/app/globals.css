@@ -63,7 +63,7 @@ body,html
 }
 .gray-text-three
 {
-  color:#1f1f1f;
+  color: #1f1f1f !important;
 }
 .text-white-custom
 {
