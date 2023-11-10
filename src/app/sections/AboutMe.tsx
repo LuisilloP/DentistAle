@@ -16,9 +16,8 @@ const AboutMe = (props: Props) => {
                 <div className='flex flex-col gap-5 pt-10'>
 
                     <p className='text-sm text-zinc-200 font-bold'>
-                        El Dr. Alejandro Bacic completó sus estudios de postgrado en odontología en la Universidad de Sydney, tras haber cursado anteriormente estudios de fisioterapia. Ha ejercido la odontología extensamente en las regiones metropolitanas y rurales de Nueva Gales del Sur, antes de regresar a Sydney, a la que considera su hogar.
-                    </p>
-                    <p className='text-sm text-zinc-200 font-bold'>
+                        El Dr. Alejandro Bacic es especialista en implantología oral y rehabilitación protésica . Ha ejercido la odontología extensamente en la comuna de Ovalle a la que considera su hogar.
+                        <br> </br>
                         Cariñoso y comprensivo, el Dr. Alejandro se esfuerza por proporcionar a los pacientes el más alto nivel de atención. Sentado en la silla del Dr. Alejandro, usted se convierte en su prioridad número uno. Es un apasionado de hacer que los pacientes se sientan cómodos y a gusto, mientras que entrega resultados perfectos.
                     </p>
                     <p className='text-sm text-zinc-200 font-bold'>

@@ -21,7 +21,7 @@ const GeneraInformation = (props: Props) => {
                         <h3 className=' font-bold text-2xl md:text-3xl pb-5 gray-text-three'>Direccion</h3>
                         <a
                             target='#_blank'
-                            href='https://www.google.com/maps/@-30.5776062,-71.1883305,3a,75y,307.3h,90t/data=!3m7!1e1!3m5!1sh5Q2y8YirUAUzX-aLKAi-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dh5Q2y8YirUAUzX-aLKAi-g%26cb_client%3Dsearch.gws-prod.gps%26w%3D86%26h%3D86%26yaw%3D307.30414%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu'
+                            href='https://maps.app.goo.gl/4KHp16p3mFaKJfSj6'
                             className=' cursor-pointer  '>
                             <h4>Ovalle, Coquimbo, Chile.</h4>
                             <h4>Avda. Manuel Peñafiel #1480</h4>
@@ -38,10 +38,10 @@ const GeneraInformation = (props: Props) => {
                     <div className=''>
                         <h3 className=' font-bold text-2xl md:text-3xl pb-5 gray-text-three'>Horario</h3>
                         <h4>Lunes-viernes</h4>
-                        <h4>de 9:00am hasta 1:30pm</h4>
-                        <h4>de 2:00pm hasta 6:30pm</h4>
+                        <h4>de 9:00am hasta 1:00pm</h4>
+                        <h4>de 3:00pm hasta 8:00pm</h4>
                         <h4 className='pt-5'>Sabado</h4>
-                        <h4>de 9:00am hasta 1:30pm</h4>
+                        <h4>de 9:00am hasta 1:00pm</h4>
 
                     </div>
                 </div>

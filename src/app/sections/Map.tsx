@@ -11,7 +11,7 @@ const Map = (props: Props) => {
                 <iframe
 
                     className=' hover:scale-105 transition ease-in-out w-full h-[30rem] lg:h-[40vw] border-0 '
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1021.2369374892991!2d-71.18935626087291!3d-30.577039550448117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1699288246129!5m2!1ses!2scl"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d649.6521449885762!2d-71.18877452402386!3d-30.577297232032613!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x968fcbd8dc253339%3A0x6fd53bb504852270!2sClinica%20Dental%20SB!5e0!3m2!1ses!2scl!4v1699552805732!5m2!1ses!2scl"
                     loading="lazy" >
                 </iframe>
             </div>
