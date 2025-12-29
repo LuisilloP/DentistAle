@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap");
 @import "sweetalert2/dist/sweetalert2.min.css";
 @import "swiper/css";
 @import "swiper/css/pagination";
@@ -9,6 +9,8 @@
 @tailwind utilities;
 
 :root {
+  --font-display: "DM Serif Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --foreground-rgb: 27, 25, 22;
   --background-start-rgb: 247, 241, 233;
   --background-end-rgb: 238, 228, 214;
@@ -32,11 +34,53 @@ html {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
 }
 
 * {
   scroll-margin-top: 4.5rem;
+}
+
+h1,
+h2,
+h3,
+.heading,
+.hero-title,
+.section-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(32px, 4.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+select,
+label,
+nav {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+button,
+.btn,
+.cta {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .section-contact {
@@ -100,16 +144,16 @@ body {
 }
 
 .font-poppins {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
 }
 
 .font-poppins-100 {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 100;
 }
 
 .font-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
 }
 
 .line-height-special {

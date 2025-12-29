@@ -1,4 +1,4 @@
-﻿module.exports = {
+module.exports = {
   content: [
     "./src/pages/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}",
     "./src/components/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}",
@@ -12,10 +12,12 @@
         parallaxTWo: "url('/bannerThree.jpg')",
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
-        title: ['"Playfair Display"', 'serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["DM Serif Display", "serif"],
+        title: ["DM Serif Display", "serif"],
       },
     },
   },
   plugins: [],
 };
+

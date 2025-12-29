@@ -3,13 +3,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import type { Metadata } from 'next'
 import Head from 'next/head';
-import { Manrope } from 'next/font/google'
+import { Inter, DM_Serif_Display } from 'next/font/google'
 import Header from "./layouts/Header"
 import Footer from "./layouts/Footer"
 import whatsappButton from "../../public/svg/whatsappButton.svg"
 import Image from 'next/image'
 import Link from 'next/link'
-const manrope = Manrope({ subsets: ['latin'], weight: ['400', '500', '600', '700'] })
+const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-sans' })
+const dmSerif = DM_Serif_Display({ subsets: ['latin'], weight: '400', variable: '--font-display' })
 
 export const metadata: Metadata = {
   title: "Clinica Dental Mirador | Odontologia e implantologia en Ovalle",
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="es">
 
-      <body className={manrope.className}>
+      <body className={`${inter.variable} ${dmSerif.variable} ${inter.className}`}>
         <Link target='__blank' href={"https://wa.me/56927151566?text=Hola,%20Estoy%20Interesado%20en%20tus%20servicios%20odontologicos%20"} className='w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80'><Image src={whatsappButton} alt="btn_whatsapp" className=' rounded-full '></Image></Link>
         <Header />
         {children}

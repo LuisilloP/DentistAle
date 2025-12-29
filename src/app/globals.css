@@ -1,13 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 :root {
+  --font-display: "DM Serif Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-body,html
+ body,html
 {
   overflow-x: hidden;
   background: #1f1f1f;
@@ -83,15 +85,15 @@ body,html
 
 .font-poppins
 {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
 }
 .font-title
 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
 }
 .font-poppins-100
 {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 100;
 }
 .line-height-special
@@ -102,6 +104,48 @@ body,html
 .text-size-2rm
 {
   font-size: 2.3rem !important;
+}
+.font-title,
+h1,
+h2,
+h3,
+.heading,
+.hero-title,
+.section-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(32px, 4.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+select,
+label,
+nav {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+button,
+.btn,
+.cta {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .card-service:hover .none-name-card
 { 
