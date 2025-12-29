@@ -234,6 +234,17 @@ swiper-container::part(pagination) {
   object-fit: cover;
 }
 
+[data-parallax] {
+  background-position: center calc(50% + var(--parallax-offset, 0px));
+}
+
+@media (max-width: 767px) {
+  [data-parallax] {
+    background-attachment: scroll;
+    will-change: background-position;
+  }
+}
+
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
