@@ -14,7 +14,7 @@ const GeneraInformation = (props: Props) => {
                 <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 text-lg md:text-xl'>
                     <div className=''>
                         <h3 className=' font-bold text-2xl md:text-3xl pb-5 gray-text-three'>Agenda</h3>
-                        <Link target='__blank' href={"https://wa.me/935886949?text=Hola,%20Estoy%20Interesado%20en%20tus%20servicios%20odontologicos%20"}
+                        <Link target='__blank' href={"https://wa.me/56927151566?text=Hola,%20Estoy%20Interesado%20en%20tus%20servicios%20odontologicos%20"}
                             className=' text-white cursor-pointer    '>¡Agenda aca!</Link>
                     </div>
                     <div>
@@ -31,7 +31,7 @@ const GeneraInformation = (props: Props) => {
                     <div >
                         <h3 className=' font-bold text-2xl md:text-3xl pb-5 gray-text-three'>Contacto</h3>
                         <div className='flex flex-col'>
-                            <a href="tel:+56935886949" className='cursor-pointer  '>+569 3588 6949</a>
+                            <a href="tel:+56927151566" className='cursor-pointer  '>+569 2715 1566</a>
                             <a href='mailto:a.bacic.v@gmail.com' className='cursor-pointer  '>a.bacic.v@gmail.com</a>
                         </div>
                     </div>

@@ -1,0 +1,81 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../sections/Hero.astro";
+import IndexCards from "../sections/IndexCards.astro";
+import BannerDent from "../sections/BannerDent.astro";
+import ServicesSection from "../sections/ServicesSection.astro";
+import AboutSection from "../sections/AboutSection.astro";
+import GallerySection from "../sections/GallerySection.astro";
+import ContactSection from "../sections/ContactSection.astro";
+import PatientsSection from "../sections/PatientsSection.astro";
+import CellphoneSection from "../sections/CellphoneSection.astro";
+import GeneralInformationSection from "../sections/GeneralInformationSection.astro";
+import PaymentSection from "../sections/PaymentSection.astro";
+import MapSection from "../sections/MapSection.astro";
+---
+
+<BaseLayout>
+  <main>
+    <section id="principal" class="bg-[#0f0e0c] text-white">
+      <Hero />
+    </section>
+
+    <section class="bg-[#f7f1e9]">
+      <div class="max-w-7xl m-auto px-4 lg:px-20 py-16">
+        <IndexCards />
+      </div>
+    </section>
+
+    <section class="bg-[#0f0e0c]">
+      <BannerDent />
+    </section>
+
+    <section id="services" class="bg-[#0f0e0c]">
+      <div class="max-w-7xl m-auto px-4 py-16">
+        <ServicesSection />
+      </div>
+    </section>
+
+    <section id="aboutme" class="bg-[#e8dcc8]">
+      <AboutSection />
+    </section>
+
+    <section id="galery" class="bg-[#0f0e0c]">
+      <div class="max-w-7xl m-auto px-4 py-16">
+        <GallerySection />
+      </div>
+    </section>
+
+    <section id="contact" class="bg-[#f7f1e9]">
+      <ContactSection />
+    </section>
+
+    <section class="bg-[#0f0e0c]">
+      <PatientsSection />
+    </section>
+
+    <section class="bg-[#f7f1e9]">
+      <CellphoneSection />
+    </section>
+
+    <section class="bg-[#f7f1e9]">
+      <GeneralInformationSection />
+    </section>
+
+    <section class="bg-[#0f0e0c]">
+      <PaymentSection />
+    </section>
+
+    <section class="bg-[#f7f1e9] py-16">
+      <MapSection />
+    </section>
+  </main>
+
+  <script>
+    import { register } from "swiper/element/bundle";
+
+    if (!customElements.get("swiper-container")) {
+      register();
+    }
+  </script>
+</BaseLayout>

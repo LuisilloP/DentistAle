@@ -1,12 +1,15 @@
 import React from 'react'
 import womenImageContact from "../../../public/womenImageContact.png"
 import Image from 'next/image'
-type Props = {}
 
-const ImageTextContact = (props: Props) => {
+type Props = {
+    alt: string
+}
+
+const ImageTextContact = ({ alt }: Props) => {
     return (
         <div>
-            <Image className=' opacity-90' src={womenImageContact} alt='Mujer Sonriente'></Image>
+            <Image className=' opacity-90' src={womenImageContact} alt={alt}></Image>
         </div>
     )
 }

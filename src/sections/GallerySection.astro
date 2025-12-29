@@ -1,0 +1,49 @@
+﻿---
+import SubTitle from "../components/SubTitle.astro";
+import { galleryImages } from "../data/content";
+---
+
+<div class="max-w-6xl mx-auto">
+  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">Clínica</p>
+  <SubTitle classAlter="text-white" text="Conoce el establecimiento" />
+  <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl">
+    Espacios pensados para tu comodidad, con un ambiente cálido y tecnología moderna para cada tratamiento.
+  </p>
+
+  <div class="mt-8">
+    <swiper-container
+      slides-per-view="1"
+      space-between="16"
+      centered-slides="true"
+      loop="true"
+      pagination="true"
+      pagination-clickable="true"
+      navigation="true"
+      autoplay="true"
+      autoplay-delay="3500"
+      autoplay-disable-on-interaction="false"
+      grab-cursor="true"
+      speed="700"
+      breakpoints='{"768":{"slidesPerView":1.1,"spaceBetween":20},"1024":{"slidesPerView":1.25,"spaceBetween":24}}'
+      class="clinic-swiper w-full h-[18rem] sm:h-[24rem] lg:h-[32rem] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
+      aria-label="Carrusel de imagenes de la clinica"
+    >
+      {galleryImages.map((image, index) => (
+        <swiper-slide class="h-full">
+          <div class="relative h-full w-full">
+            <img
+              src={image}
+              width="1200"
+              height="800"
+              alt={`Imagen de la clinica ${index + 1}`}
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover"
+            />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+          </div>
+        </swiper-slide>
+      ))}
+    </swiper-container>
+  </div>
+</div>

@@ -8,7 +8,7 @@ const AboutMe = (props: Props) => {
 
     return (
         <div className='grid grid-row md:grid-cols-2 gap-5 md:gap-12 pb-10 md:pb-0 '>
-            <Image src={dentistPrincipal} className=' h-[30rem] md:h-[100%] lg:h-[45rem] md:w-[100%]  min-h-[20rem] object-cover object-top' alt='dentist'></Image>
+            <Image src={dentistPrincipal} className=' h-[30rem] md:h-[100%] lg:h-[45rem] md:w-[100%]  min-h-[20rem] object-cover object-[50%_60%]' alt='dentist'></Image>
             <div className=' md:pt-10 px-2 md:pl-10'>
                 <h4 className='text-xs gray-text-three pb-4 '>Sobre mi</h4>
                 <SubTitle classAlter='gray-text-three text-shadow-special  ' text='ALEJANDRO BACIC VARAS'></SubTitle>

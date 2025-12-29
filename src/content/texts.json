@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "badge": "Contacto",
+    "title": {
+      "prefix": "Hablemos de tus ",
+      "accent": "necesidades."
+    },
+    "description": "Agenda tu evaluación de forma simple y directa. Nuestro equipo te orienta en los próximos pasos con atención cercana.",
+    "image": {
+      "alt": "Paciente sonriendo en la clínica",
+      "badge": "Atención cercana",
+      "caption": "Te acompañamos en cada etapa"
+    },
+    "panel": {
+      "badge": "WhatsApp",
+      "title": "Agenda por WhatsApp, más rápido.",
+      "subtitle": "Te respondemos para coordinar tu evaluación y los próximos pasos de tu tratamiento.",
+      "ctaLabel": "Abrir WhatsApp",
+      "whatsappLabel": "WhatsApp directo",
+      "phone": "+56 9 3588 6949",
+      "waText": "Hola Dr. Alejandro Bacic, quiero agendar una evaluación. Mi nombre es ____ y mi consulta es ____.",
+      "microcopy": "Respuesta en horario de atención · Atención cercana y personalizada"
+    },
+    "chips": [
+      {
+        "label": "Quiero agendar evaluación",
+        "waText": "Hola Dr. Alejandro Bacic, quiero agendar una evaluación."
+      },
+      {
+        "label": "Consulta por implantes",
+        "waText": "Hola Dr. Alejandro Bacic, tengo una consulta por implantes dentales."
+      },
+      {
+        "label": "Dolor / urgencia",
+        "waText": "Hola Dr. Alejandro Bacic, tengo dolor o urgencia y necesito orientación."
+      }
+    ]
+  }
+}

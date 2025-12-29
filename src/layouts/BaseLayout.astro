@@ -1,0 +1,99 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { seo } from "../data/content";
+
+const baseSeo = seo ?? {};
+const {
+  title = baseSeo.title ?? "Clinica Dental Mirador | Odontologia e implantologia en Ovalle",
+  description =
+    baseSeo.description ??
+    "Atencion odontologica integral en Ovalle. Implantologia, rehabilitacion oral y estetica con enfoque en resultados duraderos y trato cercano.",
+  keywords =
+    baseSeo.keywords ??
+    "Clinica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantologia en Ovalle, implantes dentales, rehabilitacion oral, odontologia estetica, ortodoncia, endodoncia, blanqueamiento dental, odontopediatria, salud bucal en Ovalle",
+  canonical = baseSeo.canonical,
+  ogImage = baseSeo.ogImage ?? "/specialbanner.jpg",
+} = Astro.props;
+
+const siteName = baseSeo.siteName ?? "Clinica Dental Mirador";
+const phone = baseSeo.phone ?? "+56927151566";
+const email = baseSeo.email ?? "a.bacic.v@gmail.com";
+const sameAs = baseSeo.sameAs ?? [
+  "https://www.instagram.com/clinicadental.sb/",
+  "https://web.facebook.com/people/Clinica-Dental-SB/61553382780456/?is_tour_dismissed=true",
+];
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : canonical;
+const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).toString() : ogImage;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  name: siteName,
+  image: ogImageUrl,
+  url: canonicalUrl,
+  telephone: phone,
+  email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Avda. Manuel Penafiel #1480, Of. 315-316 B",
+    addressLocality: "Ovalle",
+    addressRegion: "Coquimbo",
+    addressCountry: "CL",
+  },
+  areaServed: "Ovalle, Coquimbo, Chile",
+  priceRange: "$$",
+  openingHours: ["Mo-Fr 09:00-13:00", "Mo-Fr 15:00-20:00", "Sa 09:00-13:00"],
+  sameAs,
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={siteName} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#c8ab88" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="es_CL" />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <script type="application/ld+json">
+      {JSON.stringify(structuredData)}
+    </script>
+  </head>
+  <body>
+    <a
+      class="w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80"
+      href="https://wa.me/56927151566?text=Hola,%20Estoy%20interesado%20en%20tus%20servicios%20odontol%C3%B3gicos."
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <img src="/svg/whatsappButton.svg" alt="Boton de WhatsApp" class="rounded-full" />
+    </a>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+
+
+

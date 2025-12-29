@@ -1,0 +1,66 @@
+﻿---
+import SubTitle from "../components/SubTitle.astro";
+import { patients } from "../data/content";
+---
+
+<div class="max-w-6xl mx-auto px-4 py-16">
+  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">
+    Conoce a nuestros
+  </p>
+  <SubTitle classAlter="text-white" text="Pacientes" />
+  <p class="mt-4 text-white/70 text-base md:text-lg max-w-2xl leading-relaxed">
+    Casos reales de tratamientos personalizados. Cada sonrisa refleja
+    dedicación, precisión y un plan a medida.
+  </p>
+
+  <div class="mt-8 grid gap-8 lg:grid-cols-2">
+    {
+      patients.map((patient) => (
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-white/60">
+                Caso clínico
+              </p>
+              <h3 class="text-2xl md:text-3xl font-title text-white capitalize">
+                {patient.name}
+              </h3>
+              <p class="text-white/70">{patient.procedure}</p>
+            </div>
+            <span class="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70">
+              Desliza la galería
+            </span>
+          </div>
+          <div class="mt-6 relative w-full h-[18rem] sm:h-[20rem] lg:h-[22rem] overflow-hidden rounded-2xl border border-white/10">
+            <swiper-container
+              slides-per-view="1"
+              space-between="16"
+              loop="true"
+              pagination="true"
+              pagination-clickable="true"
+              class="patient-gallery-swiper absolute inset-0 h-full w-full"
+              aria-label={`Galeria de ${patient.name}`}
+            >
+              {patient.images.map((image, index) => (
+                <swiper-slide class="block h-full w-full">
+                  <div class="relative h-full w-full">
+                    <img
+                      src={image}
+                      width="1200"
+                      height="800"
+                      alt={`Caso clinico de ${patient.name} ${index + 1}`}
+                      loading="eager"
+                      decoding="async"
+                      class="block h-full w-full object-cover"
+                    />
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+                  </div>
+                </swiper-slide>
+              ))}
+            </swiper-container>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,21 @@
+---
+type Props = {
+  alt: string;
+  badge: string;
+  caption: string;
+};
+
+const { alt, badge, caption } = Astro.props;
+---
+
+<div class="relative">
+  <img
+    class="rounded-[2.5rem] shadow-2xl border border-[#e3d6c6]"
+    src="/womenImageContact.png"
+    alt={alt}
+  />
+  <div class="absolute -bottom-4 left-6 bg-white/95 border border-[#e3d6c6] rounded-2xl px-4 py-3 shadow-xl">
+    <p class="text-xs uppercase tracking-[0.3em] text-[#6e6254]">{badge}</p>
+    <p class="text-sm font-semibold text-[#1b1916]">{caption}</p>
+  </div>
+</div>

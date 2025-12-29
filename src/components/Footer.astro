@@ -1,0 +1,59 @@
+---
+import { navLinks } from "../data/content";
+---
+
+<footer class="bg-[#0f0e0c] text-zinc-300">
+  <div class="w-full max-w-screen-xl mx-auto px-4 py-10">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+      <a href="#principal" class="flex z-50 font-title items-center text-2xl uppercase gap-2 text-white">
+        <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#0f0e0c] border border-[#c8ab88]/60 shadow-lg">
+          <img alt="Logo Clinica Dental Mirador" class="h-7 w-7" src="/icon.png" />
+        </span>
+        Clinica Dental Mirador
+      </a>
+      <div class="flex flex-col gap-6">
+        <ul class="flex gap-5 flex-wrap items-center text-sm font-medium text-zinc-400">
+          {navLinks.map((nav) => (
+            <li key={nav.id}>
+              <a class="transition hover:text-white" href={`#${nav.id}`}>
+                {nav.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="flex flex-wrap items-center gap-3 text-sm text-zinc-400">
+          <span>Ovalle, Coquimbo</span>
+          <span class="hidden sm:inline">|</span>
+          <a href="tel:+56927151566" class="hover:text-white">+56 9 2715 1566</a>
+          <span class="hidden sm:inline">|</span>
+          <a href="mailto:a.bacic.v@gmail.com" class="hover:text-white">a.bacic.v@gmail.com</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <p class="font-title text-white font-bold uppercase">Siguenos</p>
+          <a
+            href="https://www.instagram.com/clinicadental.sb/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Instagram"
+          >
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 border border-white/15">
+              <img src="/svg/IgLogo.svg" width="22" height="22" alt="Logo Instagram" class="h-6 w-6" />
+            </span>
+          </a>
+          <a
+            href="https://web.facebook.com/people/Clinica-Dental-SB/61553382780456/?is_tour_dismissed=true"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Facebook"
+          >
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 border border-white/15">
+              <img src="/svg/FLogo.svg" width="22" height="22" alt="Logo Facebook" class="h-6 w-6" />
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-8 border-white/10" />
+    <p class="text-xs text-zinc-500">(c) Clinica Dental Mirador. Todos los derechos reservados.</p>
+  </div>
+</footer>

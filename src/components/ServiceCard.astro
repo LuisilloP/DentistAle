@@ -1,0 +1,26 @@
+﻿---
+import ButtonContact from "./ButtonContact.astro";
+
+const { image, name, text } = Astro.props;
+const imageFit = name === "Rinomodelación" ? "object-fill" : "object-cover";
+---
+
+<article class="hover-card group overflow-hidden rounded-[2rem] border border-white/10 bg-[#11100e] shadow-[0_22px_50px_rgba(0,0,0,0.45)]">
+  <div class="relative h-52 md:h-56 overflow-hidden rounded-[1.6rem]">
+    <img
+      class={`card-image h-full w-full ${imageFit} transition-transform duration-500`}
+      src={image}
+      alt={name}
+      loading="lazy"
+    />
+    <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-70"></div>
+  </div>
+  <div class="p-6 text-sm md:text-base text-white/75 leading-relaxed">
+    <h3 class="text-2xl font-title text-white">{name}</h3>
+    <div class="h-[3px] w-16 rounded-full bg-[linear-gradient(90deg,#EA0892,#FECD53)] my-4"></div>
+    <p>{text}</p>
+    <div class="pt-6">
+      <ButtonContact />
+    </div>
+  </div>
+</article>

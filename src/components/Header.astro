@@ -1,0 +1,147 @@
+﻿---
+import { navLinks } from "../data/content";
+import ButtonContact from "./ButtonContact.astro";
+---
+
+<header
+  class="site-header w-full fixed md:px-10 px-6 top-0 left-0 z-50 bg-transparent md:bg-[#e8dcc8]/60 py-4 ease-out duration-500 backdrop-blur-lg border border-transparent md:border-black/20"
+  data-site-header
+>
+  <div class="nav-backdrop" data-nav-backdrop></div>
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 relative z-40">
+    <div class="flex items-center justify-between gap-3 w-full md:w-auto md:justify-start rounded-full border border-white/15 md:border-transparent bg-[#141311]/90 md:bg-transparent px-4 py-2 md:px-0 md:py-0 shadow-lg md:shadow-none">
+      <a href="#principal" class="cursor-pointer flex items-center gap-3 text-white md:text-[#1b1916]">
+        <span class="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-[#0f0e0c] border border-[#c8ab88]/60 shadow-lg">
+          <img src="/icon.png" class="h-6 w-6 md:h-7 md:w-7" alt="Logo Clinica Dental Mirador" />
+        </span>
+        <span class="leading-tight" data-site-title>
+          <span class="block text-[0.75rem] uppercase tracking-[0.32em] text-white/75 md:text-[#3c342c] font-semibold">Clinica</span>
+          <span class="block font-title text-base sm:text-lg md:text-2xl text-white md:text-[#1b1916]">Dental Mirador</span>
+        </span>
+      </a>
+      <button
+        class="text-white cursor-pointer md:hidden w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shadow-md"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Abrir menu"
+      >
+      <svg
+        data-icon-open
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-7 h-7"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 17.25Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <svg
+        data-icon-close
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-7 h-7 hidden"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M6.22 6.22a.75.75 0 0 1 1.06 0L12 10.94l4.72-4.72a.75.75 0 0 1 1.06 1.06L13.06 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L12 13.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06L10.94 12 6.22 7.28a.75.75 0 0 1 0-1.06Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      </button>
+    </div>
+    <nav
+      id="site-nav"
+      data-mobile-nav
+      class="nav-mobile absolute md:static z-40 left-4 right-4 top-full mt-3 w-auto bg-[#141311]/95 md:bg-[#0f0e0c]/70 font-poppins px-5 py-5 md:px-3 md:py-2 rounded-[32px] md:rounded-full border border-white/10 shadow-2xl md:shadow-xl backdrop-blur-2xl md:backdrop-blur-xl"
+    >
+      <ul class="flex flex-col gap-3 md:flex-row md:items-center md:gap-2 text-left md:text-center">
+        {navLinks.map((link) => (
+          <li class="md:my-0" key={link.id}>
+            <a
+              class="cursor-pointer inline-flex items-center justify-between md:justify-center gap-3 md:gap-0 rounded-full px-4 py-3 md:px-4 md:py-2 w-full md:w-auto text-[0.95rem] sm:text-[1rem] md:text-[12px] font-semibold normal-case md:uppercase tracking-[0.04em] md:tracking-[0.2em] text-white/90 md:text-white/85 bg-[#25231f] md:bg-transparent border border-white/10 md:border-transparent shadow-inner md:shadow-none transition hover:bg-[#2c2a25] md:hover:bg-[#FECD53] md:hover:text-[#1b1916] md:hover:border-[#FECD53]"
+              data-nav-link
+              href={`#${link.id}`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a
+        href="#contact"
+        class="md:hidden mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#c8ab88] px-4 py-3 text-[0.95rem] font-semibold tracking-[0.08em] text-[#1b1916] shadow-lg transition hover:bg-[#dbc2a1]"
+      >
+        Reservar hora
+      </a>
+    </nav>
+    <div class="hidden md:block">
+      <ButtonContact />
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector("[data-site-header]");
+  const mobileNav = header?.querySelector("[data-mobile-nav]");
+  const toggle = header?.querySelector("[data-menu-toggle]");
+  const iconOpen = header?.querySelector("[data-icon-open]");
+  const iconClose = header?.querySelector("[data-icon-close]");
+  const backdrop = header?.querySelector("[data-nav-backdrop]");
+
+  const setScrolled = () => {
+    if (!header) return;
+    const scrolled = window.scrollY > 10;
+    header.classList.toggle("is-scrolled", scrolled);
+    header.classList.toggle("py-4", scrolled);
+    header.classList.toggle("py-5", !scrolled);
+  };
+
+  const openMenu = () => {
+    if (!mobileNav || !toggle || !iconOpen || !iconClose) return;
+    mobileNav.classList.add("is-open");
+    backdrop?.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Cerrar menu");
+    iconOpen.classList.add("hidden");
+    iconClose.classList.remove("hidden");
+  };
+
+  const closeMenu = () => {
+    if (!mobileNav || !toggle || !iconOpen || !iconClose) return;
+    mobileNav.classList.remove("is-open");
+    backdrop?.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menu");
+    iconOpen.classList.remove("hidden");
+    iconClose.classList.add("hidden");
+  };
+
+  const toggleMenu = () => {
+    if (!mobileNav) return;
+    const isOpen = mobileNav.classList.contains("is-open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  setScrolled();
+  window.addEventListener("scroll", setScrolled, { passive: true });
+
+  toggle?.addEventListener("click", toggleMenu);
+  backdrop?.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+  mobileNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+</script>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Fonasa">
+  <rect width="1200" height="600" fill="#ffffff" />
+  <g transform="translate(70 90)">
+    <circle cx="110" cy="110" r="80" fill="#0aa3e0" />
+    <circle cx="250" cy="140" r="65" fill="#95c11f" />
+    <circle cx="70" cy="260" r="50" fill="#0072bc" />
+    <path d="M20 360c50-110 220-160 320-70" fill="none" stroke="#0aa3e0" stroke-width="34" stroke-linecap="round" />
+    <path d="M150 380c50-90 200-120 280-60" fill="none" stroke="#95c11f" stroke-width="28" stroke-linecap="round" />
+  </g>
+  <text x="420" y="350" font-family="Poppins, Arial, sans-serif" font-size="180" fill="#0072bc" font-weight="600">Fonasa</text>
+</svg>

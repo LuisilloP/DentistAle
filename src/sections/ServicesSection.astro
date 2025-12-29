@@ -1,0 +1,101 @@
+﻿---
+import SubTitle from "../components/SubTitle.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import {
+  servicesImplantology,
+  servicesGeneral,
+  servicesEndodontic,
+  servicesBucal,
+  servicesEsthetic,
+  servicesRehabilitation,
+  servicesFacial,
+} from "../data/content";
+---
+
+<div class="flex flex-col gap-12">
+  <div class="max-w-3xl">
+    <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">Especialidades</p>
+    <SubTitle classAlter="text-white" text="Servicios odontológicos" />
+    <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
+      Tratamientos personalizados, pensados para resultados duraderos. Revisamos cada caso con detalle, proponemos un
+      plan claro y acompañamos todo el proceso para que te sientas seguro.
+    </p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-3">
+    <div class="rounded-2xl border border-white/10 bg-[#151311] p-6 text-white/80 shadow-xl">
+      <p class="text-xs uppercase tracking-[0.3em] text-white/60">Paso 1</p>
+      <p class="mt-2 text-lg font-semibold">Diagnóstico integral</p>
+      <p class="mt-2 text-sm text-white/70">Evaluamos tu salud bucal para definir el mejor tratamiento.</p>
+    </div>
+    <div class="rounded-2xl border border-white/10 bg-[#151311] p-6 text-white/80 shadow-xl">
+      <p class="text-xs uppercase tracking-[0.3em] text-white/60">Paso 2</p>
+      <p class="mt-2 text-lg font-semibold">Plan a medida</p>
+      <p class="mt-2 text-sm text-white/70">Te explicamos opciones, tiempos y cuidados para decidir con claridad.</p>
+    </div>
+    <div class="rounded-2xl border border-white/10 bg-[#151311] p-6 text-white/80 shadow-xl">
+      <p class="text-xs uppercase tracking-[0.3em] text-white/60">Paso 3</p>
+      <p class="mt-2 text-lg font-semibold">Acompañamiento</p>
+      <p class="mt-2 text-sm text-white/70">Seguimos cada etapa para lograr resultados estéticos y funcionales.</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-10">
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Implantología oral" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesImplantology.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Odontología general" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesGeneral.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Cirugía bucal y endodoncia" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesEndodontic.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+        {servicesBucal.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Cirugía estética periodontal" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesEsthetic.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Rehabilitación oral" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesRehabilitation.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Estética facial" />
+      <div class="pt-6 grid gap-6 md:grid-cols-2">
+        {servicesFacial.map((service) => (
+          <ServiceCard image={service.image} name={service.name} text={service.text} />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+---
+import SubTitle from "../components/SubTitle.astro";
+---
+
+<div class="max-w-6xl mx-auto px-4 py-16">
+  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">Tambien</p>
+  <SubTitle classAlter="text-white" text="Contamos con" />
+  <p class="mt-4 text-white/70 text-base md:text-lg max-w-2xl leading-relaxed">
+    Atendemos con Fonasa y aceptamos pago con tarjetas de credito y debito.
+  </p>
+
+  <div class="mt-8 grid gap-6 md:grid-cols-2">
+    <div class="rounded-[26px] border border-[#e3d6c6]/70 bg-white/95 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+      <div class="mb-3 inline-flex items-center rounded-full bg-[#e8dcc8]/50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5a4b3a]">
+        Fonasa
+      </div>
+      <div class="relative flex aspect-[20/9] items-center justify-center overflow-hidden rounded-2xl bg-white">
+        <img
+          src="https://dentalmiradorovalle.cl/Images/principal/fonasa.jpg"
+          width="1200"
+          height="600"
+          alt="Logo Fonasa"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-contain transition-transform duration-300"
+        />
+        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/6 via-transparent to-transparent"></div>
+      </div>
+    </div>
+    <div class="rounded-[26px] border border-[#e3d6c6]/70 bg-white/95 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+      <div class="mb-3 inline-flex items-center rounded-full bg-[#e8dcc8]/50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5a4b3a]">
+        Tarjetas y Transbank
+      </div>
+      <div class="relative flex aspect-[20/9] items-center justify-center overflow-hidden rounded-2xl bg-white">
+        <img
+          src="https://dentalmiradorovalle.cl/Images/principal/transbank.jpg"
+          width="1200"
+          height="600"
+          alt="Medios de pago con tarjetas Transbank"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-contain transition-transform duration-300"
+        />
+        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/6 via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </div>
+</div>

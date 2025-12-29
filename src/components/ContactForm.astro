@@ -1,0 +1,186 @@
+﻿---
+---
+
+<form id="contact-form" class="flex flex-col gap-5">
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="name" class="text-xs uppercase tracking-[0.3em] text-white/60">Nombre</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        autocomplete="given-name"
+        class="mt-2 w-full rounded-xl border border-white/10 bg-[#26221e] px-4 py-3 text-white placeholder-white/40 focus:border-[#c8ab88] focus:outline-none"
+        placeholder="Ej: María"
+        required
+      />
+    </div>
+    <div>
+      <label for="surname" class="text-xs uppercase tracking-[0.3em] text-white/60">Apellido</label>
+      <input
+        type="text"
+        name="surname"
+        id="surname"
+        autocomplete="family-name"
+        class="mt-2 w-full rounded-xl border border-white/10 bg-[#26221e] px-4 py-3 text-white placeholder-white/40 focus:border-[#c8ab88] focus:outline-none"
+        placeholder="Ej: García"
+        required
+      />
+    </div>
+  </div>
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="phone" class="text-xs uppercase tracking-[0.3em] text-white/60">Teléfono</label>
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        autocomplete="tel"
+        class="mt-2 w-full rounded-xl border border-white/10 bg-[#26221e] px-4 py-3 text-white placeholder-white/40 focus:border-[#c8ab88] focus:outline-none"
+        placeholder="Ej: 912345678"
+        required
+      />
+    </div>
+    <div>
+      <label for="mail" class="text-xs uppercase tracking-[0.3em] text-white/60">Correo</label>
+      <input
+        type="email"
+        name="mail"
+        id="mail"
+        autocomplete="email"
+        class="mt-2 w-full rounded-xl border border-white/10 bg-[#26221e] px-4 py-3 text-white placeholder-white/40 focus:border-[#c8ab88] focus:outline-none"
+        placeholder="Ej: correo@correo.com"
+        required
+      />
+    </div>
+  </div>
+  <div>
+    <label for="message" class="text-xs uppercase tracking-[0.3em] text-white/60">Mensaje</label>
+    <textarea
+      name="message"
+      id="message"
+      class="mt-2 w-full rounded-xl border border-white/10 bg-[#26221e] px-4 py-3 text-white placeholder-white/40 focus:border-[#c8ab88] focus:outline-none min-h-[140px]"
+      placeholder="Cuéntanos en qué podemos ayudarte."
+      required
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full md:w-[12rem] bg-[#c8ab88] text-[#1b1916] py-3 px-4 text-xs md:text-sm font-semibold uppercase tracking-[0.3em] rounded-full hover:bg-[#dbc2a1] transition"
+  >
+    Agendar
+  </button>
+</form>
+
+<script>
+  import Swal from "sweetalert2";
+
+  const form = document.querySelector("#contact-form");
+
+  const emailRegex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const phoneRegex = /^\d{9}$/;
+
+  const buildData = () => {
+    const formData = new FormData(form);
+    return {
+      name: String(formData.get("name") || "").trim(),
+      surname: String(formData.get("surname") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      mail: String(formData.get("mail") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+    };
+  };
+
+  const validate = (data) => {
+    const errors = {
+      name: "",
+      surname: "",
+      phone: "",
+      mail: "",
+      message: "",
+    };
+
+    if (!data.name) errors.name = "Ingresa tu nombre.";
+    if (!data.surname) errors.surname = "Ingresa tu apellido.";
+    if (!data.mail) {
+      errors.mail = "Ingresa tu correo.";
+    } else if (!emailRegex.test(data.mail)) {
+      errors.mail = "Correo inválido. Ej: correo@correo.com";
+    }
+    if (!data.phone) {
+      errors.phone = "Ingresa tu teléfono.";
+    } else if (!phoneRegex.test(data.phone)) {
+      errors.phone = "Número inválido, se necesitan 9 dígitos. Ej: 912345678";
+    }
+    if (!data.message) {
+      errors.message = "Ingresa un mensaje.";
+    } else if (data.message.length < 5) {
+      errors.message = "Mensaje muy corto; debe tener al menos 5 caracteres.";
+    }
+
+    return errors;
+  };
+
+  const sendForm = (data) =>
+    fetch("https://formsubmit.co/ajax/a.bacic.v@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((response) => response.json());
+
+  const showErrors = (errors) => {
+    const messages = Object.values(errors).filter(Boolean);
+    if (!messages.length) return;
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 8000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "error",
+      html: messages.join("<br>"),
+    });
+  };
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = buildData();
+      const errors = validate(data);
+      const hasErrors = Object.values(errors).some(Boolean);
+
+      if (hasErrors) {
+        showErrors(errors);
+        return;
+      }
+
+      const result = await Swal.fire({
+        title: "Los datos están correctos",
+        html: `Nombre: ${data.name}<br>Correo: ${data.mail}<br>Mensaje: ${data.message}`,
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Sí, enviar",
+        cancelButtonText: "No",
+        icon: "warning",
+      });
+
+      if (result.isConfirmed) {
+        await sendForm(data);
+        await Swal.fire("Datos enviados", "", "success");
+        form.reset();
+      }
+    });
+  }
+</script>

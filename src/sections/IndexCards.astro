@@ -1,0 +1,22 @@
+﻿---
+import { indexCards } from "../data/content";
+import IndexCard from "../components/IndexCard.astro";
+---
+
+<div class="flex flex-col gap-10">
+  <div class="text-center max-w-3xl mx-auto">
+    <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">Todo lo esencial</p>
+    <h2 class="font-title text-3xl md:text-5xl text-[#1b1916]">
+      Todo lo que necesitas, <span class="color-text-beige">en un solo lugar</span>
+    </h2>
+    <p class="mt-4 text-[#4a433b] text-base md:text-lg">
+      Conoce al especialista, explora tratamientos y agenda tu cita con una experiencia clara y cercana.
+    </p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    {indexCards.map((card) => (
+      <IndexCard data={card} />
+    ))}
+  </div>
+</div>

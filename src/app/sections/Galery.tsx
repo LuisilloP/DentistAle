@@ -9,9 +9,18 @@ import SubTitle from '../components/SubTitle';
 type Props = {}
 
 const Galery = (props: Props) => {
-    const data = ["https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/clinicImages%2Fclinic-one.jpg?alt=media&token=2dbe1782-1e16-4e3c-bdc4-2a355840f63d"
-        , "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/clinicImages%2Fclinic-two.jpg?alt=media&token=295487a1-ce12-4751-9e15-5b51055e233b",
-        "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/clinicImages%2Fclinic-three.jpeg?alt=media&token=261caf97-7943-4b72-a04e-d63de28b9971"]
+    const data = [
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic1.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic2.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic3.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic4.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic5.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic6.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic7.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic8.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic9.jpeg",
+        "https://dentalmiradorovalle.cl/Images/clinic/clinic10.jpeg"
+    ]
 
     return (
         <div className=''>
