@@ -190,29 +190,25 @@ export const galleryImages = [
 
 export const servicesImplantology = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Implant.jpeg?alt=media&token=24b965b2-a5dd-497c-bac4-446847683753&_gl=1*1lqlq8e*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjUyMTQwNS4xMi4xLjE2OTY1MjE2NTkuNjAuMC4w",
+    image: "/images/services/implant-simple.webp",
     name: "Implante simple",
     text:
       "Consiste en colocar un tornillo de titanio en la mandíbula para reemplazar una raíz dental perdida. Luego se instala una corona sobre el implante, restaurando la apariencia y la función de un diente natural.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/PSI.jpeg?alt=media&token=acd6a42d-5b14-402f-b2b9-2ffbee112f9c&_gl=1*184vtdr*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjU0MTk2MS4xMy4xLjE2OTY1NDIwNDYuNTYuMC4w",
+    image: "/images/services/psi.webp",
     name: "Puente sobre implantes",
     text:
       "Consiste en instalar un puente personalizado sobre implantes dentales para reemplazar varios dientes perdidos. Esto mejora la función masticatoria y la estética de la sonrisa.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Sobredentadura.jpeg?alt=media&token=0ba0d1e1-51fd-4507-97f1-8e89443e66bf&_gl=1*100wu4e*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjU0MTk2MS4xMy4xLjE2OTY1NDI0MDEuNjAuMC4w",
+    image: "/images/services/sobredentadura.webp",
     name: "Sobredentadura",
     text:
       "Consiste en fijar una prótesis completa o parcial sobre implantes dentales para lograr mayor estabilidad, seguridad y comodidad al hablar y comer.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/hibrida.jpg?alt=media&token=9b7de7ab-0c03-4478-a01e-2021b52fd547&_gl=1*r3m3oq*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjU2NzIwOS4xNC4xLjE2OTY1NjcyNTAuMTkuMC4w",
+    image: "/images/services/hibrida.webp",
     name: "Híbrida",
     text:
       "Consiste en colocar implantes dentales que sirven como anclaje y luego fijar una prótesis sobre ellos, creando una solución fija, estable y de alta durabilidad.",
@@ -221,15 +217,13 @@ export const servicesImplantology = [
 
 export const servicesGeneral = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/fractura.jpeg?alt=media&token=871f1979-759f-4beb-9d14-7adcddb2d803&_gl=1*18lyxik*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjcwMjMzNy4xNi4xLjE2OTY3MDI0OTYuNC4wLjA.",
+    image: "/images/services/fractura.webp",
     name: "Emergencia dental",
     text:
       "Una emergencia dental requiere atención inmediata por dolor intenso, inflamación, sangrado, dientes fracturados o perdidos u otras condiciones que comprometen la salud bucal.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/CariesB.jpeg?alt=media&token=79fe65e5-f30a-4e03-a490-ef03172c90f0&_gl=1*6f3hi4*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjU0MTk2MS4xMy4xLjE2OTY1NDMxNzEuNDIuMC4w",
+    image: "/images/services/cariesb.webp",
     name: "Limpieza",
     text:
       "Consiste en eliminar placa y sarro y finalizar con un pulido dental para ayudar a prevenir problemas y mantener una salud bucal óptima. Es un procedimiento de rutina para una sonrisa fresca y saludable.",
@@ -238,8 +232,7 @@ export const servicesGeneral = [
 
 export const servicesEndodontic = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/bucal%2Fendodo-transformed.png?alt=media&token=10a19095-b303-4b59-b9c2-b39924d0576d",
+    image: "/images/services/endodoncia.webp",
     name: "Tratamiento de conducto",
     text:
       "Consiste en retirar la pulpa dental infectada o dañada del interior del diente. Luego se limpia, desinfecta y se sella el conducto para evitar infecciones y aliviar el dolor.",
@@ -248,8 +241,7 @@ export const servicesEndodontic = [
 
 export const servicesBucal = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/bucal%2Fmuelas%20jucio.jpg?alt=media&token=e274971b-42e4-4e37-9150-d650dfb04718",
+    image: "/images/services/muelas-juicio.webp",
     name: "Muelas del juicio",
     text:
       "Consiste en la extracción de las muelas del juicio, ubicadas en la parte posterior de la boca. Se realiza con anestesia local o general y, después del procedimiento, se entregan indicaciones de cuidado para una recuperación adecuada.",
@@ -260,15 +252,13 @@ export const servicesBucalEndo = [...servicesEndodontic, ...servicesBucal];
 
 export const servicesEsthetic = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Perid%2FPulidoR.jpeg?alt=media&token=6ba991b2-c1cd-4a10-8f84-309b5f91943b",
+    image: "/images/services/pulido-radicular.webp",
     name: "Pulido radicular",
     text:
       "Consiste en limpiar y alisar las raíces de los dientes y la zona bajo las encías. Durante el procedimiento se eliminan placa, sarro y bacterias.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Perid%2Frg.jpg?alt=media&token=67171c11-051a-4242-9f8b-5d66201199cb",
+    image: "/images/services/recesion-gingival.webp",
     name: "Recesión gingival",
     text:
       "Consiste en cubrir la zona de recesión y fortalecer las encías mediante injerto de tejido (propio o donante) o mediante un colgajo que cubre la raíz expuesta, finalizando con sutura.",
@@ -277,15 +267,13 @@ export const servicesEsthetic = [
 
 export const servicesRehabilitation = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Rehabilitation%2Fcrwons.png?alt=media&token=7d507b9c-b004-4901-9ab0-7aa41d4ed8dc",
+    image: "/images/services/coronas.webp",
     name: "Coronas",
     text:
       "Una corona dental es una restauración que cubre y protege un diente dañado. Generalmente requiere preparar el diente y luego colocar una cubierta de cerámica o metal para devolver resistencia y estética.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Rehabilitation%2Fcarillas.webp?alt=media&token=3ca24ebd-c05a-4539-a1a8-44cf980c3d86",
+    image: "/images/services/carillas.webp",
     name: "Carillas",
     text:
       "Son láminas delgadas de porcelana o resina que se adhieren a la parte frontal de los dientes. El proceso incluye evaluación, toma de impresiones y definición de color y forma.",
@@ -294,15 +282,13 @@ export const servicesRehabilitation = [
 
 export const servicesFacial = [
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Facial%2Frino.jpg?alt=media&token=2a5ca54c-2f02-447d-8f42-1034785bc067",
+    image: "/images/services/rino.webp",
     name: "Rinomodelación",
     text:
       "Consiste en la aplicación de ácido hialurónico en la nariz para mejorar su forma y armonía facial. Es un procedimiento no quirúrgico, con anestesia local y resultados inmediatos.",
   },
   {
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/Facial%2FbotoxB.png?alt=media&token=870d678f-8c39-4ef6-9fce-1970bbc695ea",
+    image: "/images/services/botox.webp",
     name: "Botox",
     text:
       "Consiste en aplicar toxina botulínica en músculos específicos para suavizar temporalmente arrugas y líneas de expresión. Los resultados son transitorios y ayudan a lograr un aspecto más descansado.",

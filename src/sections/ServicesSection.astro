@@ -1,6 +1,6 @@
 ---
 import SubTitle from "../components/SubTitle.astro";
-import ServiceCard from "../components/ServiceCard.astro";
+import ServiceBlock from "../components/ServiceBlock.astro";
 import {
   servicesContent,
   servicesImplantology,
@@ -21,6 +21,16 @@ const serviceMap: Record<string, any[]> = {
 };
 
 const getServices = (key: string) => serviceMap[key] ?? [];
+const firstCategoryKey = servicesContent.categories[0]?.itemsKey ?? "";
+const CHUNK_SIZE = 4; // Ajusta este valor para cargar mas o menos cards por bloque.
+
+const chunkServices = (items: any[], size: number) =>
+  items.reduce<any[][]>((acc, item, index) => {
+    const groupIndex = Math.floor(index / size);
+    if (!acc[groupIndex]) acc[groupIndex] = [];
+    acc[groupIndex].push(item);
+    return acc;
+  }, []);
 ---
 
 <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.1">
@@ -42,16 +52,68 @@ const getServices = (key: string) => serviceMap[key] ?? [];
     ))}
   </div>
 
-  <div class="flex flex-col gap-10" data-reveal-group data-reveal-stagger="0.08">
-    {servicesContent.categories.map((category) => (
-      <div data-reveal>
-        <SubTitle classAlter="text-white text-3xl md:text-4xl" text={category.title} />
-        <div class="pt-6 grid gap-6 md:grid-cols-2" data-reveal-group data-reveal-stagger="0.1">
-          {getServices(category.itemsKey).map((service) => (
-            <ServiceCard image={service.image} name={service.name} text={service.text} />
-          ))}
-        </div>
-      </div>
-    ))}
+  <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
+    {servicesContent.categories.map((category) => {
+      const services = getServices(category.itemsKey);
+      const chunks = chunkServices(services, CHUNK_SIZE);
+
+      return (
+        <section class="flex flex-col gap-6" data-reveal>
+          <SubTitle classAlter="text-white text-3xl md:text-4xl" text={category.title} />
+          <div class="flex flex-col gap-10">
+            {chunks.map((chunk, chunkIndex) => (
+              <ServiceBlock
+                services={chunk}
+                categoryKey={category.itemsKey}
+                blockId={`${category.itemsKey}-${chunkIndex}`}
+                chunkIndex={chunkIndex}
+                isFirstCategory={category.itemsKey === firstCategoryKey}
+              />
+            ))}
+          </div>
+        </section>
+      );
+    })}
   </div>
 </div>
+
+<script>
+  import { createInViewOnce } from "../utils/useInViewOnce";
+
+  const blocks = Array.from(document.querySelectorAll("[data-service-block]"));
+  if (blocks.length > 0) {
+    const inView = createInViewOnce({ rootMargin: "300px 0px", threshold: 0.05, once: true });
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const activateBlock = (block) => {
+      if (block.dataset.loaded === "true") return;
+      const template = block.querySelector("template[data-block-template]");
+      if (!template) return;
+
+      const placeholder = block.querySelector("[data-block-placeholder]");
+      const fragment = template.content.cloneNode(true);
+
+      block.appendChild(fragment);
+      placeholder?.remove();
+      template.remove();
+      block.dataset.loaded = "true";
+
+      const revealItems = Array.from(block.querySelectorAll("[data-reveal]"));
+      if (revealItems.length > 0) {
+        const reveal = () => {
+          revealItems.forEach((el) => el.classList.add("reveal-visible"));
+        };
+
+        if (reduceMotion.matches) {
+          reveal();
+        } else {
+          requestAnimationFrame(() => requestAnimationFrame(reveal));
+        }
+      }
+    };
+
+    blocks.forEach((block) => {
+      inView.observe(block, () => activateBlock(block));
+    });
+  }
+</script>

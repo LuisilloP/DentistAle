@@ -234,6 +234,16 @@ swiper-container::part(pagination) {
   object-fit: cover;
 }
 
+[data-lazy-img] {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: linear-gradient(135deg, rgba(17, 16, 14, 0.7), rgba(17, 16, 14, 0.9));
+}
+
+[data-lazy-img][data-loaded="true"] {
+  opacity: 1;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translate3d(0, var(--reveal-translate, 14px), 0);

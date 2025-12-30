@@ -1,20 +1,37 @@
-﻿---
+---
 import ButtonContact from "./ButtonContact.astro";
 
-const { image, name, text } = Astro.props;
+interface Props {
+  image: string;
+  name: string;
+  text: string;
+  fetchPriority?: "high" | "low" | "auto";
+}
+
+const { image, name, text, fetchPriority = "auto", ...rest } = Astro.props as Props & Record<string, any>;
 const imageFit = name === "Rinomodelación" ? "object-fill" : "object-cover";
+const isHigh = fetchPriority === "high";
+const loading = isHigh ? "eager" : "lazy";
 ---
 
 <article
   class="hover-card group overflow-hidden rounded-[2rem] border border-white/10 bg-[#11100e] shadow-[0_22px_50px_rgba(0,0,0,0.45)]"
   data-reveal
+  {...rest}
 >
-  <div class="relative h-52 md:h-56 overflow-hidden rounded-[1.6rem]">
+  <div class="relative h-52 md:h-56 overflow-hidden rounded-[1.6rem] bg-[#100f0d]">
     <img
       class={`card-image h-full w-full ${imageFit} transition-transform duration-500`}
       src={image}
       alt={name}
-      loading="lazy"
+      loading={loading}
+      decoding="async"
+      data-lazy-img
+      onload="this.dataset.loaded='true'"
+      width="640"
+      height="420"
+      fetchpriority={fetchPriority}
+      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 45vw, 100vw"
     />
     <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-70"></div>
   </div>
