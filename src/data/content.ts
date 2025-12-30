@@ -23,6 +23,54 @@ export const navLinks = [
   { id: "galery", label: "Galería" },
 ];
 
+export const heroContent = {
+  badge: "En la ciudad de Ovalle",
+  title: {
+    prefix: "Atención ",
+    accent: "odontológica",
+    suffix: " de primer nivel",
+  },
+  description: [
+    "Un dentista en Ovalle, en sintonía con las inquietudes y necesidades de nuestros pacientes. Adoptamos un enfoque integral en la atención dental y proporcionamos tratamientos que se centran en resultados a largo plazo.",
+    "Nuestra clínica está comprometida en abordar la ansiedad dental al crear un ambiente relajante y al destacar la experiencia y precisión de nuestros odontólogos estéticos. Encuentra la sonrisa que exprese tu bienestar.",
+  ],
+  bullets: ["Atención personalizada", "Agenda rápida", "Enfoque integral", "Resultados duraderos"],
+  ctaSecondary: "Conoce nuestros servicios",
+  ribbon: {
+    badge: "Atención inmediata",
+    title: "WhatsApp disponible",
+  },
+};
+
+export const bannerDentContent = {
+  badge: "Confianza",
+  title: "La clave de la confianza: una sonrisa saludable.",
+};
+
+export const aboutContent = {
+  badge: "Sobre mí",
+  name: "Alejandro Bacic Varas",
+  chips: ["Implantología oral", "Rehabilitación protésica", "Odontología estética", "Atención cercana"],
+  paragraphs: [
+    "Soy el Dr. Alejandro Bacic, especialista en implantología oral y rehabilitación protésica. Mi propósito es ayudarte a recuperar función, salud y confianza al sonreír, mediante tratamientos planificados con precisión y pensados para resultados naturales y duraderos.",
+    "En mi atención priorizo un trato cercano y transparente: escucho tus necesidades, evalúo tu caso en detalle y te explico cada etapa de forma clara para que tomes decisiones informadas y con tranquilidad. Entiendo que muchas personas llegan con nervios o experiencias previas difíciles, por eso me enfoco en que te sientas acompañado(a) y seguro(a) desde el primer momento.",
+    "Creo que una rehabilitación de calidad va más allá de lo estético: debe sentirse bien, funcionar correctamente y mantenerse en el tiempo. Por eso, cada tratamiento se diseña de manera personalizada, buscando el equilibrio entre estética, funcionalidad y comodidad. Mi compromiso es que vivas una experiencia positiva, profesional y segura, desde la primera evaluación hasta el resultado final.",
+  ],
+  specialtyCard: {
+    badge: "Especialidad",
+    title: "Implantología y rehabilitación protésica",
+  },
+};
+
+export const indexContent = {
+  badge: "Todo lo esencial",
+  title: {
+    prefix: "Todo lo que necesitas, ",
+    accent: "en un solo lugar",
+  },
+  description: "Conoce al especialista, explora tratamientos y agenda tu cita con una experiencia clara y cercana.",
+};
+
 export const indexCards = [
   {
     image: "/svg/dentistPerson.svg",
@@ -49,6 +97,83 @@ export const indexCards = [
     name: "contact",
   },
 ];
+
+export const contactContent = {
+  badge: "Contacto",
+  title: {
+    prefix: "Hablemos de tus ",
+    accent: "necesidades.",
+  },
+  description:
+    "Agenda tu evaluación de forma simple y directa. Nuestro equipo te orienta en los próximos pasos con atención cercana.",
+  image: {
+    alt: "Paciente sonriendo en la clínica",
+    badge: "Atención cercana",
+    caption: "Te acompañamos en cada etapa",
+  },
+  panel: {
+    badge: "WhatsApp",
+    title: "Agenda por WhatsApp, más rápido.",
+    subtitle: "Te respondemos para coordinar tu evaluación y los próximos pasos de tu tratamiento.",
+    ctaLabel: "Abrir WhatsApp",
+    whatsappLabel: "WhatsApp directo",
+    phone: "+56 9 3588 6949",
+    waText: "Hola Dr. Alejandro Bacic, quiero agendar una evaluación. Mi nombre es ____ y mi consulta es ____.",
+    microcopy: "Respuesta en horario de atención - Atención cercana y personalizada",
+  },
+  chips: [
+    {
+      label: "Quiero agendar evaluación",
+      waText: "Hola Dr. Alejandro Bacic, quiero agendar una evaluación.",
+    },
+    {
+      label: "Consulta por implantes",
+      waText: "Hola Dr. Alejandro Bacic, tengo una consulta por implantes dentales.",
+    },
+    {
+      label: "Dolor / urgencia",
+      waText: "Hola Dr. Alejandro Bacic, tengo dolor o urgencia y necesito orientación.",
+    },
+  ],
+};
+
+export const galleryContent = {
+  badge: "Clínica",
+  title: "Conoce el establecimiento",
+  description: "Espacios pensados para tu comodidad, con un ambiente cálido y tecnología moderna para cada tratamiento.",
+};
+
+export const servicesContent = {
+  badge: "Especialidades",
+  title: "Servicios odontológicos",
+  description:
+    "Tratamientos personalizados, pensados para resultados duraderos. Revisamos cada caso con detalle, proponemos un plan claro y acompañamos todo el proceso para que te sientas seguro.",
+  steps: [
+    {
+      label: "Paso 1",
+      title: "Diagnóstico integral",
+      text: "Evaluamos tu salud bucal para definir el mejor tratamiento.",
+    },
+    {
+      label: "Paso 2",
+      title: "Plan a medida",
+      text: "Te explicamos opciones, tiempos y cuidados para decidir con claridad.",
+    },
+    {
+      label: "Paso 3",
+      title: "Acompañamiento",
+      text: "Seguimos cada etapa para lograr resultados estéticos y funcionales.",
+    },
+  ],
+  categories: [
+    { title: "Implantología oral", itemsKey: "servicesImplantology" },
+    { title: "Odontología general", itemsKey: "servicesGeneral" },
+    { title: "Cirugía bucal y endodoncia", itemsKey: "servicesBucalEndo" },
+    { title: "Cirugía estética periodontal", itemsKey: "servicesEsthetic" },
+    { title: "Rehabilitación oral", itemsKey: "servicesRehabilitation" },
+    { title: "Estética facial", itemsKey: "servicesFacial" },
+  ],
+};
 
 export const galleryImages = [
   "https://dentalmiradorovalle.cl/Images/clinic/clinic1.jpeg",
@@ -100,14 +225,14 @@ export const servicesGeneral = [
       "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/fractura.jpeg?alt=media&token=871f1979-759f-4beb-9d14-7adcddb2d803&_gl=1*18lyxik*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjcwMjMzNy4xNi4xLjE2OTY3MDI0OTYuNC4wLjA.",
     name: "Emergencia dental",
     text:
-      "Una emergencia dental requiere atención inmediata por dolor intenso, inflamación, sangrado, dientes fracturados o perdidos, u otras condiciones que comprometen la salud bucal.",
+      "Una emergencia dental requiere atención inmediata por dolor intenso, inflamación, sangrado, dientes fracturados o perdidos u otras condiciones que comprometen la salud bucal.",
   },
   {
     image:
       "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/CariesB.jpeg?alt=media&token=79fe65e5-f30a-4e03-a490-ef03172c90f0&_gl=1*6f3hi4*_ga*ODk4OTgwMzY3LjE2OTI3NjYwNTQ.*_ga_CW55HF8NVT*MTY5NjU0MTk2MS4xMy4xLjE2OTY1NDMxNzEuNDIuMC4w",
     name: "Limpieza",
     text:
-      "Consiste en eliminar placa y sarro, y finalizar con un pulido dental para ayudar a prevenir problemas y mantener una salud bucal óptima. Es un procedimiento de rutina para una sonrisa fresca y saludable.",
+      "Consiste en eliminar placa y sarro y finalizar con un pulido dental para ayudar a prevenir problemas y mantener una salud bucal óptima. Es un procedimiento de rutina para una sonrisa fresca y saludable.",
   },
 ];
 
@@ -130,6 +255,8 @@ export const servicesBucal = [
       "Consiste en la extracción de las muelas del juicio, ubicadas en la parte posterior de la boca. Se realiza con anestesia local o general y, después del procedimiento, se entregan indicaciones de cuidado para una recuperación adecuada.",
   },
 ];
+
+export const servicesBucalEndo = [...servicesEndodontic, ...servicesBucal];
 
 export const servicesEsthetic = [
   {
@@ -182,9 +309,22 @@ export const servicesFacial = [
   },
 ];
 
+export const galleryCTA = {
+  ctaLabel: "Conoce nuestros servicios",
+};
+
+export const patientsContent = {
+  badge: "Conoce a nuestros",
+  title: "Pacientes",
+  description:
+    "Casos reales de tratamientos personalizados. Cada sonrisa refleja dedicación, precisión y un plan a medida.",
+  caseLabel: "Caso clínico",
+  slideHint: "Desliza la galería",
+};
+
 export const patients = [
   {
-    name: "margarita",
+    name: "Margarita",
     procedure: "Recesión gingival",
     images: [
       "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FwomanOne.jpg?alt=media&token=f2a94829-fb05-4e65-811b-27d9e64b5d04",
@@ -196,7 +336,7 @@ export const patients = [
     ],
   },
   {
-    name: "pedro",
+    name: "Pedro",
     procedure: "Carillas",
     images: [
       "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FoneSr.jpg?alt=media&token=93b13b20-d541-4ce0-81e9-478279ad84a1",
@@ -205,3 +345,58 @@ export const patients = [
     ],
   },
 ];
+
+export const paymentContent = {
+  badge: "También",
+  title: "Contamos con",
+  description: "Atendemos con Fonasa y aceptamos pago con tarjetas de crédito y débito.",
+  cards: [
+    {
+      badge: "Fonasa",
+      title: "Fonasa",
+      image: "https://dentalmiradorovalle.cl/Images/principal/fonasa.jpg",
+      alt: "Logo Fonasa",
+    },
+    {
+      badge: "Tarjetas y Transbank",
+      title: "Tarjetas y Transbank",
+      image: "https://dentalmiradorovalle.cl/Images/principal/transbank.jpg",
+      alt: "Medios de pago con tarjetas Transbank",
+    },
+  ],
+};
+
+export const generalInfoContent = {
+  cards: [
+    {
+      badge: "Agenda",
+      title: "Reserva tu cita",
+      text: "Agendamiento rápido por WhatsApp.",
+      cta: { label: "Agenda ahora", href: "https://wa.me/56927151566?text=Hola,%20Quisiera%20agendar%20una%20cita." },
+    },
+    {
+      badge: "Dirección",
+      title: "Ovalle, Coquimbo",
+      lines: ["Avda. Manuel Peñafiel #1480", "Of. 315-316 B. Edificio Arenas"],
+      href: "https://maps.app.goo.gl/4KHp16p3mFaKJfSj6",
+    },
+    {
+      badge: "Contacto",
+      title: "Llámanos o escribe",
+      contacts: [
+        { href: "tel:+56927151566", label: "+56 9 2715 1566" },
+        { href: "mailto:a.bacic.v@gmail.com", label: "a.bacic.v@gmail.com" },
+      ],
+    },
+    {
+      badge: "Horario",
+      title: "Atención presencial",
+      lines: ["Lunes a viernes: 09:00 a 13:00", "Lunes a viernes: 15:00 a 20:00", "Sábado: 09:00 a 13:00"],
+    },
+  ],
+};
+
+export const cellphoneContent = {
+  text: "Estamos aquí para ayudarte a programar tu cita. Comunícate al +56 9 2715 1566 o reserva tu cita en línea.",
+  ctaLabel: "Reservar ahora",
+};

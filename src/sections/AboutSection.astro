@@ -1,76 +1,43 @@
-﻿---
+---
 import SubTitle from "../components/SubTitle.astro";
+import { aboutContent } from "../data/content";
+
+const about = aboutContent;
 ---
 
 <div
   class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center"
+  data-reveal-group
+  data-reveal-stagger="0.12"
 >
-  <div class="relative">
-    <div
-      class="absolute -top-4 -left-4 h-full w-full rounded-[2.5rem] border border-[#c8ab88]/40"
-    >
-    </div>
+  <div class="relative" data-reveal>
+    <div class="absolute -top-4 -left-4 h-full w-full rounded-[2.5rem] border border-[#c8ab88]/40"></div>
     <img
       src="/dentistPrincipal.webp"
       class="relative h-[28rem] md:h-[34rem] w-full object-cover object-[50%_60%] rounded-[2.5rem] shadow-2xl"
-      alt="Dr. Alejandro Bacic en la clínica"
+      alt="Dr. Alejandro Bacic en la clinica"
     />
     <div
       class="absolute -bottom-6 right-6 bg-white/90 border border-[#e3d6c6] rounded-2xl px-4 py-3 shadow-xl"
     >
-      <p class="text-xs uppercase tracking-[0.3em] text-[#6e6254]">
-        Especialidad
-      </p>
-      <p class="text-sm font-semibold text-[#1b1916]">
-        Implantología y rehabilitación protésica
-      </p>
+      <p class="text-xs uppercase tracking-[0.3em] text-[#6e6254]">{about.specialtyCard.badge}</p>
+      <p class="text-sm font-semibold text-[#1b1916]">{about.specialtyCard.title}</p>
     </div>
   </div>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6" data-reveal>
     <div>
-      <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">Sobre mí</p>
-      <SubTitle text="Alejandro Bacic Varas" />
+      <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">{about.badge}</p>
+      <SubTitle text={about.name} />
     </div>
-    <div
-      class="grid gap-2 text-xs uppercase tracking-[0.2em] text-[#6e6254] sm:grid-cols-2"
-    >
-      <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center"
-        >Implantología oral</span
-      >
-      <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center"
-        >Rehabilitación protésica</span
-      >
-      <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center"
-        >Odontología estética</span
-      >
-      <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center"
-        >Atención cercana</span
-      >
+    <div class="grid gap-2 text-xs uppercase tracking-[0.2em] text-[#6e6254] sm:grid-cols-2">
+      {about.chips.map((chip) => (
+        <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center">{chip}</span>
+      ))}
     </div>
-    <div
-      class="flex flex-col gap-5 text-[#3f3831] text-base md:text-lg leading-relaxed"
-    >
-      <p>
-        Soy el Dr. Alejandro Bacic, especialista en implantología oral y
-        rehabilitación protésica. Mi propósito es ayudarte a recuperar función,
-        salud y confianza al sonreír, mediante tratamientos planificados con
-        precisión y pensados para resultados naturales y duraderos.
-      </p>
-      <p>
-        En mi atención priorizo un trato cercano y transparente: escucho tus
-        necesidades, evalúo tu caso en detalle y te explico cada etapa de forma
-        clara para que tomes decisiones informadas y con tranquilidad. Entiendo
-        que muchas personas llegan con nervios o experiencias previas difíciles,
-        por eso me enfoco en que te sientas acompañado(a) y seguro(a) desde el
-        primer momento.
-      </p>
-      Creo que una rehabilitación de calidad va más allá de lo estético: debe sentirse
-      bien, funcionar correctamente y mantenerse en el tiempo. Por eso, cada tratamiento
-      se diseña de manera personalizada, buscando el equilibrio entre estética, funcionalidad
-      y comodidad. <p>
-        Mi compromiso es que vivas una experiencia positiva, profesional y
-        segura, desde la primera evaluación hasta el resultado final.
-      </p>
+    <div class="flex flex-col gap-5 text-[#3f3831] text-base md:text-lg leading-relaxed">
+      {about.paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
     </div>
   </div>
 </div>

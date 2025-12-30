@@ -1,16 +1,16 @@
-﻿---
+---
 import SubTitle from "../components/SubTitle.astro";
-import { galleryImages } from "../data/content";
+import { galleryContent, galleryImages } from "../data/content";
 ---
 
-<div class="max-w-6xl mx-auto">
-  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">Clínica</p>
-  <SubTitle classAlter="text-white" text="Conoce el establecimiento" />
-  <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl">
-    Espacios pensados para tu comodidad, con un ambiente cálido y tecnología moderna para cada tratamiento.
+<div class="max-w-6xl mx-auto" data-reveal-group data-reveal-stagger="0.12">
+  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]" data-reveal>{galleryContent.badge}</p>
+  <SubTitle classAlter="text-white" text={galleryContent.title} data-reveal />
+  <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl" data-reveal>
+    {galleryContent.description}
   </p>
 
-  <div class="mt-8">
+  <div class="mt-8" data-reveal>
     <swiper-container
       slides-per-view="1"
       space-between="16"

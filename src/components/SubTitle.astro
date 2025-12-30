@@ -1,7 +1,10 @@
 ﻿---
-const { text, classAlter = "text-[#1b1916]" } = Astro.props;
+const { text, classAlter = "text-[#1b1916]", ...rest } = Astro.props;
 ---
 
-<h2 class={`font-title text-4xl md:text-5xl lg:text-6xl leading-tight text-shadow-special ${classAlter}`}>
+<h2
+  class={`font-title text-4xl md:text-5xl lg:text-6xl leading-tight text-shadow-special ${classAlter}`}
+  {...rest}
+>
   {text}
 </h2>
