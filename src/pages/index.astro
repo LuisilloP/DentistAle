@@ -80,56 +80,56 @@ import MapSection from "../sections/MapSection.astro";
 
     const parallaxTargets = Array.from(document.querySelectorAll("[data-parallax]"));
     const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const mobileQuery = window.matchMedia("(max-width: 1023px)");
 
-    if (parallaxTargets.length > 0 && !reduceMotionQuery.matches) {
+    if (parallaxTargets.length > 0) {
       const items = parallaxTargets.map((el) => ({
         el,
-        speed: parseFloat(el.dataset.parallaxSpeed || "0.3"),
+        speed: parseFloat(el.dataset.parallaxSpeed || "0.35"),
+        strength: parseFloat(el.dataset.parallaxStrength || "180"),
         top: 0,
+        height: 0,
       }));
 
       const measure = () => {
         items.forEach((item) => {
           const rect = item.el.getBoundingClientRect();
           item.top = rect.top + window.scrollY;
+          item.height = rect.height;
+        });
+      };
+
+      const applyParallax = () => {
+        if (reduceMotionQuery.matches || !mobileQuery.matches) {
+          parallaxTargets.forEach((el) => el.style.removeProperty("--parallax-position"));
+          return;
+        }
+
+        const scrollY = window.scrollY;
+        items.forEach((item) => {
+          const offset = (scrollY - item.top) * item.speed;
+          item.el.style.setProperty("--parallax-position", `calc(50% + ${-offset}px)`);
         });
       };
 
       let rafId = null;
-      const update = () => {
-        rafId = null;
-        if (!mobileQuery.matches) {
-          items.forEach((item) => item.el.style.removeProperty("--parallax-offset"));
-          return;
-        }
-        const scrollY = window.scrollY;
-        items.forEach((item) => {
-          const offset = (scrollY - item.top) * item.speed;
-          item.el.style.setProperty("--parallax-offset", `${-offset}px`);
+      const schedule = () => {
+        if (rafId !== null) return;
+        rafId = requestAnimationFrame(() => {
+          rafId = null;
+          applyParallax();
         });
       };
 
-      const schedule = () => {
-        if (rafId !== null) return;
-        rafId = requestAnimationFrame(update);
-      };
-
       measure();
-      update();
+      applyParallax();
       document.addEventListener("scroll", schedule, { passive: true });
       window.addEventListener("resize", () => {
         measure();
-        update();
+        applyParallax();
       });
-      reduceMotionQuery.addEventListener("change", () => {
-        if (reduceMotionQuery.matches) {
-          items.forEach((item) => item.el.style.removeProperty("--parallax-offset"));
-        } else {
-          measure();
-          update();
-        }
-      });
+      reduceMotionQuery.addEventListener("change", applyParallax);
+      mobileQuery.addEventListener("change", applyParallax);
     }
   </script>
 </BaseLayout>
