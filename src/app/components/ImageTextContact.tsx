@@ -1,5 +1,5 @@
 import React from 'react'
-import womenImageContact from "../../../public/womenImageContact.png"
+import womenImageContact from "../../../public/images/people/womenImageContact.png"
 import Image from 'next/image'
 
 type Props = {

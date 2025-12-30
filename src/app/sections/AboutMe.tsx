@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import dentistPrincipal from "../../../public/dentistPrincipal.webp"
+import dentistPrincipal from "../../../public/images/people/dentistPrincipal.webp"
 import SubTitle from '../components/SubTitle'
 type Props = {}
 

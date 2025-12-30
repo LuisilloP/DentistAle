@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import Image from 'next/image'
 //images
-import LogoF from "../../../public/icon.png"
+import LogoF from "../../../public/images/brand/icon.png"
 import LogoFacebook from "../../../public/svg/FLogo.svg"
 import LogoInstagram from "../../../public/svg/IgLogo.svg"
 import { urls } from "../data/DataServices"

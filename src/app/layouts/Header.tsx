@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import toothIconLogo from "../../../public/icon.png"
+import toothIconLogo from "../../../public/images/brand/icon.png"
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image';
 import ButtonContact from '../components/ButtonContact';

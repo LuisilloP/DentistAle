@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        parallax: "url('/specialbanner.jpg')",
-        parallaxTWo: "url('/bannerThree.jpg')",
+        parallax: "url('/images/banners/specialbanner.jpg')",
+        parallaxTWo: "url('/images/banners/bannerThree.jpg')",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],

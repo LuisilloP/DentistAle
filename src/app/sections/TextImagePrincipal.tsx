@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
 import ButtonContactShadow from '../components/ButtonContactShadow'
-import thooths from "../../../public/thooths.png"
-import inferior from "../../../public/inferior.png"
+import thooths from "../../../public/images/hero/thooths.png"
+import inferior from "../../../public/images/hero/inferior.png"
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
