@@ -1,2 +1,3 @@
 [phases.setup]
-nixPkgs = ["nodejs_24"]
+# Nixpkgs pin in Dokploy buildpack does not expose nodejs_24; use nodejs_22 which satisfies engines >=22
+nixPkgs = ["nodejs_22"]
