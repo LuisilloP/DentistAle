@@ -14,7 +14,7 @@ const {
     baseSeo.keywords ??
     "Clinica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantologia en Ovalle, implantes dentales, rehabilitacion oral, odontologia estetica, ortodoncia, endodoncia, blanqueamiento dental, odontopediatria, salud bucal en Ovalle",
   canonical = baseSeo.canonical,
-  ogImage = baseSeo.ogImage ?? "/images/brand/icon.png",
+  ogImage = baseSeo.ogImage ?? "/fav.png",
 } = Astro.props;
 
 const siteName = baseSeo.siteName ?? "Clinica Dental Mirador";
@@ -61,8 +61,8 @@ const structuredData = {
     <meta name="color-scheme" content="light" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/brand/icon.png" />
-    <link rel="apple-touch-icon" href="/images/brand/icon.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/fav.png" />
+    <link rel="apple-touch-icon" href="/fav.png" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -78,7 +78,7 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/fav.png" />
     <title>{title}</title>
     <script type="application/ld+json">
       {JSON.stringify(structuredData)}

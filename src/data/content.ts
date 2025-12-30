@@ -6,7 +6,7 @@ export const seo = {
   keywords:
     "Clínica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantología en Ovalle, implantes dentales, rehabilitación oral, odontología estética, ortodoncia, endodoncia, blanqueamiento dental, odontopediatría, salud bucal en Ovalle",
   canonical: "https://dentalmiradorovalle.cl/",
-  ogImage: "/images/brand/icon.png",
+  ogImage: "/fav.png",
   phone: "+56927151566",
   email: "a.bacic.v@gmail.com",
   sameAs: [
