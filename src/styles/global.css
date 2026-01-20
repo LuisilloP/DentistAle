@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
 @import "sweetalert2/dist/sweetalert2.min.css";
 @import "swiper/css";
 @import "swiper/css/pagination";
@@ -9,8 +9,8 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "DM Serif Display", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
   --foreground-rgb: 27, 25, 22;
   --background-start-rgb: 247, 241, 233;
   --background-end-rgb: 238, 228, 214;
@@ -286,6 +286,16 @@ details[open] summary::after {
     transform: none !important;
     filter: none !important;
     transition: none !important;
+  }
+}
+
+.hero-visual {
+  padding: 0;
+}
+
+@media (min-width: 450px) and (max-width: 1023px) {
+  .hero-visual {
+    padding: 20px;
   }
 }
 

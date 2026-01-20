@@ -7,18 +7,18 @@ import { buildWhatsAppLink } from "../utils/whatsapp";
 
 const baseSeo = seo ?? {};
 const {
-  title = baseSeo.title ?? "Clinica Dental Mirador | Odontologia e implantologia en Ovalle",
+  title = baseSeo.title ?? "Clínica Dental Mirador | Odontología e implantología en Ovalle",
   description =
     baseSeo.description ??
-    "Atencion odontologica integral en Ovalle. Implantologia, rehabilitacion oral y estetica con enfoque en resultados duraderos y trato cercano.",
+    "Atención odontológica integral en Ovalle. Implantología, rehabilitación oral y estética con enfoque en resultados duraderos y trato cercano.",
   keywords =
     baseSeo.keywords ??
-    "Clinica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantologia en Ovalle, implantes dentales, rehabilitacion oral, odontologia estetica, ortodoncia, endodoncia, blanqueamiento dental, odontopediatria, salud bucal en Ovalle",
+    "Clínica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantología en Ovalle, implantes dentales, rehabilitación oral, odontología estética, ortodoncia, endodoncia, blanqueamiento dental, odontopediatría, salud bucal en Ovalle",
   canonical = baseSeo.canonical,
   ogImage = baseSeo.ogImage ?? "/fav.png",
 } = Astro.props;
 
-const siteName = baseSeo.siteName ?? "Clinica Dental Mirador";
+const siteName = baseSeo.siteName ?? "Clínica Dental Mirador";
 const phone = baseSeo.phone ?? "+56927151566";
 const email = baseSeo.email ?? "a.bacic.v@gmail.com";
 const sameAs = baseSeo.sameAs ?? [
@@ -27,7 +27,7 @@ const sameAs = baseSeo.sameAs ?? [
 ];
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : canonical;
 const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).toString() : ogImage;
-const whatsappLink = buildWhatsAppLink(phone, "Hola, quiero agendar una evaluacion.");
+const whatsappLink = buildWhatsAppLink(phone, "Hola, quiero agendar una evaluación.");
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Dentist",
@@ -96,14 +96,13 @@ const structuredData = {
   </head>
   <body>
     <a
-      class="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#0b0f0c] shadow-[0_12px_30px_rgba(37,211,102,0.4)] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b1916] sm:px-3 sm:py-3 animation-pulse"
+      class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-[#25D366] text-[#0b0f0c] shadow-[0_15px_40px_rgba(37,211,102,0.38)] ring-2 ring-[#0b0f0c]/5 transition-transform duration-200 hover:scale-[1.05] hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b1916]"
       href={whatsappLink}
       target="_blank"
       rel="noreferrer noopener"
-      aria-label="Agendar por WhatsApp"
+      aria-label="WhatsApp"
     >
-      <img src="/svg/whatsappButton.svg" alt="" class="h-5 w-5" aria-hidden="true" />
-      <span class="sm:hidden">Agendar</span>
+      <img src="/svg/whatsappButton.svg" alt="" class="h-7 w-7 md:h-9 md:w-9" aria-hidden="true" />
     </a>
     <Header />
     <slot />

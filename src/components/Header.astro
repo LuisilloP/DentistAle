@@ -1,129 +1,202 @@
-﻿---
+---
 import { navLinks } from "../data/content";
 import ButtonContact from "./ButtonContact.astro";
 ---
 
 <header
-  class="site-header w-full fixed md:px-10 px-6 top-0 left-0 z-50 bg-transparent md:bg-[#e8dcc8]/60 py-4 ease-out duration-500 backdrop-blur-lg border border-transparent md:border-black/20"
   data-site-header
+  class="fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4"
 >
-  <div class="nav-backdrop" data-nav-backdrop></div>
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 relative z-40">
-    <div class="flex items-center justify-between gap-3 w-full md:w-auto md:justify-start rounded-full border border-white/15 md:border-transparent bg-[#141311]/90 md:bg-transparent px-4 py-2 md:px-0 md:py-0 shadow-lg md:shadow-none">
-      <a href="#principal" class="cursor-pointer flex items-center gap-3 text-white md:text-[#1b1916]">
-        <span class="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-[#0f0e0c] border border-[#c8ab88]/60 shadow-lg">
-          <img src="/images/brand/icon.png" class="h-6 w-6 md:h-7 md:w-7" alt="Logo Clinica Dental Mirador" />
-        </span>
-        <span class="leading-tight" data-site-title>
-          <span class="block text-[0.75rem] uppercase tracking-[0.32em] text-white/75 md:text-[#3c342c] font-semibold">Clinica</span>
-          <span class="block font-title text-base sm:text-lg md:text-2xl text-white md:text-[#1b1916]">Dental Mirador</span>
-        </span>
-      </a>
-      <button
-        class="text-white cursor-pointer md:hidden w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shadow-md"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Abrir menu"
-      >
-      <svg
-        data-icon-open
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-7 h-7"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 17.25Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      <svg
-        data-icon-close
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-7 h-7 hidden"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M6.22 6.22a.75.75 0 0 1 1.06 0L12 10.94l4.72-4.72a.75.75 0 0 1 1.06 1.06L13.06 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L12 13.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06L10.94 12 6.22 7.28a.75.75 0 0 1 0-1.06Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      </button>
-    </div>
-    <nav
-      id="site-nav"
-      data-mobile-nav
-      class="nav-mobile absolute md:static z-40 left-4 right-4 top-full mt-3 w-auto bg-[#141311]/95 md:bg-[#0f0e0c]/70 font-poppins px-5 py-5 md:px-3 md:py-2 rounded-[32px] md:rounded-full border border-white/10 shadow-2xl md:shadow-xl backdrop-blur-2xl md:backdrop-blur-xl"
+  <div class="max-w-6xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-5">
+    <div
+      data-nav-shell
+      class="nav-shell relative mt-1 flex items-center gap-2.5 rounded-[26px] border border-[rgba(200,171,136,0.28)] bg-[rgba(20,19,17,0.9)] px-2.5 py-2.5 shadow-[0_18px_60px_rgba(8,7,6,0.24)] backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 md:gap-2.5 md:px-3 lg:gap-4 lg:px-6 lg:py-3"
     >
-      <ul class="flex flex-col gap-3 md:flex-row md:items-center md:gap-2 text-left md:text-center">
-        {navLinks.map((link) => (
-          <li class="md:my-0" key={link.id}>
-            <a
-              class="cursor-pointer inline-flex items-center justify-between md:justify-center gap-3 md:gap-0 rounded-full px-4 py-3 md:px-4 md:py-2 w-full md:w-auto text-[0.95rem] sm:text-[1rem] md:text-[12px] font-semibold normal-case md:uppercase tracking-[0.04em] md:tracking-[0.2em] text-white/90 md:text-white/85 bg-[#25231f] md:bg-transparent border border-white/10 md:border-transparent shadow-inner md:shadow-none transition hover:bg-[#2c2a25] md:hover:bg-[#FECD53] md:hover:text-[#1b1916] md:hover:border-[#FECD53]"
-              data-nav-link
-              href={`#${link.id}`}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
       <a
-        href="#contact"
-        class="md:hidden mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#c8ab88] px-4 py-3 text-[0.95rem] font-semibold tracking-[0.08em] text-[#1b1916] shadow-lg transition hover:bg-[#dbc2a1]"
+        href="#principal"
+        class="group flex items-center gap-2.5 rounded-full px-1.5 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ab88] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(247,241,233,0.8)]"
+        aria-label="Volver al inicio"
       >
-        Reservar hora
+        <div
+          class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[rgba(255,255,255,0.16)] bg-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition duration-200 group-hover:shadow-[0_12px_26px_rgba(0,0,0,0.22)] md:h-11 md:w-11"
+        >
+          <img
+            src="/images/brand/icon.png"
+            alt="Clínica Dental Mirador"
+            loading="eager"
+            decoding="async"
+            class="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            onerror="this.classList.add('hidden'); this.nextElementSibling?.classList.remove('hidden');"
+          />
+          <span class="hidden text-[11px] font-semibold tracking-[0.32em] text-[#f3eadb]">
+            MIRADOR
+          </span>
+        </div>
+        <div class="flex flex-col leading-tight">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#f3eadb] md:text-[12px]">
+            Clínica Dental
+          </span>
+          <span class="text-[11px] md:text-[12px] text-[#e7dac4]">
+            Mirador
+          </span>
+        </div>
       </a>
-    </nav>
-    <div class="hidden md:block">
-      <ButtonContact />
+
+      <nav
+        class="desktop-nav hidden flex-1 items-center justify-center gap-1 md:flex"
+            aria-label="Navegación principal"
+      >
+        {navLinks.map((link) => (
+          <a
+          class="nav-link inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[11px] lg:px-3 lg:py-2 lg:text-[12px] font-semibold uppercase tracking-[0.16em] lg:tracking-[0.22em] text-[#f3eadb]/80 transition hover:text-[#c8ab88] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ab88] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(20,19,17,0.85)]"
+          href={`#${link.id}`}
+        >
+          {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 md:flex-none md:gap-3">
+        <ButtonContact class="hidden lg:inline-flex" />
+        <button
+          type="button"
+          data-menu-toggle
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.9)] text-[#1b1916] shadow-[0_10px_24px_rgba(0,0,0,0.2)] transition hover:border-[rgba(255,255,255,0.22)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ab88] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(20,19,17,0.85)] md:hidden"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <svg
+            data-icon-open
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            data-icon-close
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="hidden h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    data-mobile-overlay
+    aria-hidden="true"
+    class="pointer-events-none fixed inset-0 z-40 flex items-start justify-center px-4 pb-10 pt-24 opacity-0 transition-opacity duration-200 md:hidden"
+  >
+    <div
+      data-overlay-backdrop
+      class="absolute inset-0 bg-[rgba(12,8,4,0.38)] backdrop-blur-sm transition-opacity duration-200"
+    ></div>
+    <div
+      data-mobile-panel
+      tabindex="-1"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menú de navegación"
+      class="relative z-10 w-full max-w-xl rounded-[26px] border border-[rgba(200,171,136,0.32)] bg-[rgba(20,19,17,0.94)] px-5 py-5 shadow-[0_22px_70px_rgba(0,0,0,0.32)] transition-all duration-200 ease-out translate-y-2 opacity-0"
+    >
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-[rgba(255,255,255,0.16)] bg-white/90 shadow-[0_10px_22px_rgba(0,0,0,0.18)]">
+            <img src="/images/brand/icon.png" alt="Clínica Dental Mirador" class="h-7 w-auto object-contain" />
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f3eadb]">
+              Clínica Dental
+            </span>
+            <span class="text-[11px] text-[#e7dac4]">Mirador</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          data-menu-close
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.9)] text-[#1b1916] shadow-[0_10px_24px_rgba(0,0,0,0.2)] transition hover:border-[rgba(255,255,255,0.22)] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ab88] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(20,19,17,0.85)]"
+          aria-label="Cerrar menú"
+        >
+          <span class="sr-only">Cerrar menú</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-4 flex flex-col divide-y divide-[rgba(32,32,32,0.06)]" aria-label="Navegación móvil">
+        {navLinks.map((link) => (
+          <a
+            href={`#${link.id}`}
+            class="block py-3 text-lg font-semibold tracking-[0.02em] text-[#f3eadb]/90 transition hover:text-[#c8ab88] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ab88] focus-visible:ring-offset-4 focus-visible:ring-offset-[rgba(20,19,17,0.9)]"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="mt-4">
+        <ButtonContact class="w-full justify-center text-[0.95rem]" />
+      </div>
     </div>
   </div>
 </header>
 
 <script>
   const header = document.querySelector("[data-site-header]");
-  const mobileNav = header?.querySelector("[data-mobile-nav]");
+  const navShell = header?.querySelector("[data-nav-shell]");
   const toggle = header?.querySelector("[data-menu-toggle]");
+  const closeBtn = header?.querySelector("[data-menu-close]");
   const iconOpen = header?.querySelector("[data-icon-open]");
   const iconClose = header?.querySelector("[data-icon-close]");
-  const backdrop = header?.querySelector("[data-nav-backdrop]");
+  const overlay = header?.querySelector("[data-mobile-overlay]");
+  const panel = header?.querySelector("[data-mobile-panel]");
+  const backdrop = header?.querySelector("[data-overlay-backdrop]");
 
   const setScrolled = () => {
-    if (!header) return;
-    const scrolled = window.scrollY > 10;
-    header.classList.toggle("is-scrolled", scrolled);
-    header.classList.toggle("py-4", scrolled);
-    header.classList.toggle("py-5", !scrolled);
+    if (!navShell) return;
+    const scrolled = window.scrollY > 12;
+    navShell.classList.toggle("shadow-[0_14px_45px_rgba(18,16,12,0.12)]", scrolled);
+    navShell.classList.toggle("border-[rgba(200,171,136,0.32)]", scrolled);
+    navShell.classList.toggle("bg-[rgba(26,24,22,0.94)]", scrolled);
   };
 
   const openMenu = () => {
-    if (!mobileNav || !toggle || !iconOpen || !iconClose) return;
-    mobileNav.classList.add("is-open");
-    backdrop?.classList.add("is-open");
+    if (!overlay || !panel || !toggle || !iconOpen || !iconClose) return;
+    overlay.classList.remove("opacity-0", "pointer-events-none");
+    overlay.classList.add("opacity-100", "pointer-events-auto");
+    panel.classList.remove("translate-y-2", "opacity-0");
+    panel.classList.add("translate-y-0", "opacity-100");
     toggle.setAttribute("aria-expanded", "true");
-    toggle.setAttribute("aria-label", "Cerrar menu");
     iconOpen.classList.add("hidden");
     iconClose.classList.remove("hidden");
   };
 
   const closeMenu = () => {
-    if (!mobileNav || !toggle || !iconOpen || !iconClose) return;
-    mobileNav.classList.remove("is-open");
-    backdrop?.classList.remove("is-open");
+    if (!overlay || !panel || !toggle || !iconOpen || !iconClose) return;
+    overlay.classList.add("opacity-0", "pointer-events-none");
+    overlay.classList.remove("opacity-100", "pointer-events-auto");
+    panel.classList.add("translate-y-2", "opacity-0");
+    panel.classList.remove("translate-y-0", "opacity-100");
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Abrir menu");
     iconOpen.classList.remove("hidden");
     iconClose.classList.add("hidden");
   };
 
   const toggleMenu = () => {
-    if (!mobileNav) return;
-    const isOpen = mobileNav.classList.contains("is-open");
+    if (!overlay) return;
+    const isOpen = !overlay.classList.contains("pointer-events-none");
     if (isOpen) {
       closeMenu();
     } else {
@@ -135,13 +208,14 @@ import ButtonContact from "./ButtonContact.astro";
   window.addEventListener("scroll", setScrolled, { passive: true });
 
   toggle?.addEventListener("click", toggleMenu);
+  closeBtn?.addEventListener("click", closeMenu);
   backdrop?.addEventListener("click", closeMenu);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMenu();
     }
   });
-  mobileNav?.querySelectorAll("a").forEach((link) => {
+  panel?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 </script>

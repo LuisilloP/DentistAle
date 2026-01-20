@@ -1,10 +1,19 @@
 ---
-const { href = "#contact", label = "Reservar hora", subLabel, ...rest } = Astro.props;
+const {
+  href = "#contact",
+  label = "Reservar hora",
+  subLabel,
+  class: className = "",
+  ...rest
+} = Astro.props;
 ---
 
 <a
   href={href}
-  class="inline-flex items-center justify-center rounded-full border border-[#c8ab88] bg-[#c8ab88] px-6 py-2.5 text-[0.9rem] md:text-base font-semibold tracking-[0.06em] text-[#1b1916] transition hover:bg-[#dbc2a1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b1916] shadow-[0_10px_22px_rgba(200,171,136,0.28)]"
+  class:list={[
+    "inline-flex items-center justify-center rounded-full border border-[#c8ab88] bg-[#c8ab88] px-6 py-2.5 text-[0.9rem] md:text-base font-semibold tracking-[0.06em] text-[#1b1916] transition hover:bg-[#dbc2a1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b1916] shadow-[0_10px_22px_rgba(200,171,136,0.28)]",
+    className,
+  ]}
   {...rest}
 >
   {subLabel ? (

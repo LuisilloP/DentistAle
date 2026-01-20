@@ -2,6 +2,7 @@
 import SubTitle from "../components/SubTitle.astro";
 import ServiceBlock from "../components/ServiceBlock.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 import { buildWhatsAppLink } from "../utils/whatsapp";
 import {
   servicesContent,
@@ -25,7 +26,7 @@ const serviceMap: Record<string, any[]> = {
 
 const getServices = (key: string) => serviceMap[key] ?? [];
 const firstCategoryKey = servicesContent.categories[0]?.itemsKey ?? "";
-const CHUNK_SIZE = 6; // Ajusta este valor para cargar mas o menos cards por bloque.
+const CHUNK_SIZE = 6; // Ajusta este valor para cargar más o menos cards por bloque.
 
 const chunkServices = (items: any[], size: number) =>
   items.reduce<any[][]>((acc, item, index) => {
@@ -84,7 +85,7 @@ const filteredCategories = servicesContent.categories
 
 const servicesCtaLink = buildWhatsAppLink(
   contactContent.panel.phone,
-  "Hola, quiero agendar una evaluacion.",
+  "Hola, quiero agendar una evaluación.",
 );
 ---
 
@@ -143,16 +144,9 @@ const servicesCtaLink = buildWhatsAppLink(
       }
     </div>
     <div class="flex flex-wrap items-center gap-3">
-      <a
-        href={servicesCtaLink}
-        target="_blank"
-        rel="noreferrer noopener"
-        class="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-[0.78rem] md:text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0f0c] shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
-      >
-        Agenda tu evaluacion por WhatsApp
-      </a>
+      <WhatsAppButton href={servicesCtaLink} label="Agenda tu evaluación por WhatsApp" />
       <span class="text-xs uppercase tracking-[0.25em] text-white/60"
-        >Respuesta rapida</span
+        >Respuesta rápida</span
       >
     </div>
   </section>
@@ -163,7 +157,7 @@ const servicesCtaLink = buildWhatsAppLink(
       data-reveal
     >
       <summary class="cursor-pointer text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-[#f3eadb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c8ab88]">
-        Ver mas servicios
+        Ver más servicios
       </summary>
       <div class="mt-6 flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
         {mergedServices.length > 0 && (

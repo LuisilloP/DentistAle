@@ -37,8 +37,8 @@ export const heroContent = {
   bullets: ["Atención personalizada", "Agenda rápida", "Enfoque integral", "Resultados duraderos"],
   ctaPrimary: {
     label: "Agendar por WhatsApp",
-    waText: "Hola, quiero agendar una evaluacion por WhatsApp.",
-    helper: "Respuesta rapida",
+    waText: "Hola, quiero agendar una evaluación por WhatsApp.",
+    helper: "Respuesta rápida",
   },
   ctaCallLabel: "Llamar",
   ctaSecondary: "Conoce nuestros servicios",
@@ -58,10 +58,10 @@ export const aboutContent = {
   name: "Alejandro Bacic Varas",
   chips: ["Implantología oral", "Rehabilitación protésica", "Odontología estética", "Atención cercana"],
   trustBullets: [
-    "Ubicacion en Ovalle, Coquimbo",
-    "Atencion personalizada y cercana",
+    "Ubicación en Ovalle, Coquimbo",
+    "Atención personalizada y cercana",
     "Enfoque profesional con planes a medida",
-    "Acompanamiento claro en cada etapa",
+    "Acompañamiento claro en cada etapa",
   ],
   paragraphs: [
     "Soy el Dr. Alejandro Bacic, especialista en implantología oral y rehabilitación protésica. Mi propósito es ayudarte a recuperar función, salud y confianza al sonreír, mediante tratamientos planificados con precisión y pensados para resultados naturales y duraderos.",
@@ -131,7 +131,7 @@ export const contactContent = {
     whatsappLabel: "WhatsApp directo",
     phone: "+56 9 2715 1566",
     waText: "Hola Dr. Alejandro Bacic, quiero agendar una evaluación. Mi nombre es ____ y mi consulta es ____.",
-    microcopy: "Respuesta rapida en horario de atencion - Atencion cercana y personalizada",
+    microcopy: "Respuesta rápida en horario de atención - Atención cercana y personalizada",
   },
   chips: [
     {
@@ -194,10 +194,6 @@ export const galleryImages = [
   "/images/clinica/clinica-04.webp",
   "/images/clinica/clinica-05.webp",
   "/images/clinica/clinica-06.webp",
-  "/images/clinica/clinica-07.webp",
-  "/images/clinica/clinica-08.webp",
-  "/images/clinica/clinica-09.webp",
-  "/images/clinica/clinica-10.webp",
 ];
 
 export const servicesImplantology = [
@@ -319,8 +315,8 @@ export const patientsContent = {
   caseLabel: "Caso clínico",
   slideHint: "Desliza la galería",
   disclaimer: {
-    results: "Resultados pueden variar segun cada paciente.",
-    consent: "Imagenes publicadas con autorizacion del paciente.",
+    results: "Resultados pueden variar según cada paciente.",
+    consent: "Imágenes publicadas con autorización del paciente.",
   },
 };
 

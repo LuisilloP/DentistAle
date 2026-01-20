@@ -12,9 +12,9 @@ module.exports = {
         parallaxTWo: "url('/images/banners/bannerThree.jpg')",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["DM Serif Display", "serif"],
-        title: ["DM Serif Display", "serif"],
+        sans: ["Manrope", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        title: ["Playfair Display", "serif"],
       },
     },
   },

@@ -1,11 +1,12 @@
 ---
 import SubTitle from "../components/SubTitle.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 import { patients, patientsContent, contactContent } from "../data/content";
 import { buildWhatsAppLink } from "../utils/whatsapp";
 
 const patientsCtaLink = buildWhatsAppLink(
   contactContent.panel.phone,
-  "Hola, quiero agendar una evaluacion."
+  "Hola, quiero agendar una evaluación."
 );
 ---
 
@@ -39,7 +40,7 @@ const patientsCtaLink = buildWhatsAppLink(
             pagination="true"
             pagination-clickable="true"
             class="patient-gallery-swiper absolute inset-0 h-full w-full"
-            aria-label={`Galeria de ${patient.name}`}
+            aria-label={`Galería de ${patient.name}`}
           >
             {patient.images.map((image, index) => (
               <swiper-slide class="block h-full w-full">
@@ -48,7 +49,7 @@ const patientsCtaLink = buildWhatsAppLink(
                     src={image}
                     width="1200"
                     height="800"
-                    alt={`Caso clinico de ${patient.name} ${index + 1}`}
+                    alt={`Caso clínico de ${patient.name} ${index + 1}`}
                     loading="lazy"
                     decoding="async"
                     class="block h-full w-full object-cover"
@@ -66,13 +67,10 @@ const patientsCtaLink = buildWhatsAppLink(
   <div class="mt-8 flex flex-col gap-4 text-sm text-white/70" data-reveal>
     <p>{patientsContent.disclaimer?.results}</p>
     <p>{patientsContent.disclaimer?.consent}</p>
-    <a
+    <WhatsAppButton
       href={patientsCtaLink}
-      target="_blank"
-      rel="noreferrer noopener"
-      class="inline-flex w-fit items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-[0.78rem] md:text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0f0c] shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
-    >
-      Agenda tu evaluacion por WhatsApp
-    </a>
+      label="Agenda tu evaluación por WhatsApp"
+      class="w-fit"
+    />
   </div>
 </div>

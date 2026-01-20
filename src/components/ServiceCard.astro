@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { image, name, text, fetchPriority = "auto", ...rest } = Astro.props as Props & Record<string, any>;
-const imageFit = name === "Rinomodelaci?n" ? "object-fill" : "object-cover";
+const imageFit = name.toLowerCase().includes("rino") ? "object-fill" : "object-cover";
 const isHigh = fetchPriority === "high";
 const loading = isHigh ? "eager" : "lazy";
 const phone = contactContent.panel.phone ?? "";
