@@ -10,16 +10,16 @@ type Props = {}
 
 const Galery = (props: Props) => {
     const data = [
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic1.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic2.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic3.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic4.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic5.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic6.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic7.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic8.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic9.jpeg",
-        "https://dentalmiradorovalle.cl/Images/clinic/clinic10.jpeg"
+        "/images/clinica/clinica-01.webp",
+        "/images/clinica/clinica-02.webp",
+        "/images/clinica/clinica-03.webp",
+        "/images/clinica/clinica-04.webp",
+        "/images/clinica/clinica-05.webp",
+        "/images/clinica/clinica-06.webp",
+        "/images/clinica/clinica-07.webp",
+        "/images/clinica/clinica-08.webp",
+        "/images/clinica/clinica-09.webp",
+        "/images/clinica/clinica-10.webp"
     ]
 
     return (
@@ -38,7 +38,7 @@ const Galery = (props: Props) => {
                 >
                     {data.map(image =>
                     (
-                        <SwiperSlide key={image}><Image src={image} className=' ' width={800} height={500} alt="image clinic"></Image></SwiperSlide>
+                        <SwiperSlide key={image}><Image src={image} className=' ' width={800} height={500} alt="Clinica dental Mirador"></Image></SwiperSlide>
                     ))}
 
                 </Swiper>

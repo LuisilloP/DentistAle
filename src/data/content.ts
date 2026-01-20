@@ -6,8 +6,8 @@ export const seo = {
   keywords:
     "Clínica Dental Mirador, Alejandro Bacic, dentista en Ovalle, implantología en Ovalle, implantes dentales, rehabilitación oral, odontología estética, ortodoncia, endodoncia, blanqueamiento dental, odontopediatría, salud bucal en Ovalle",
   canonical: "https://dentalmiradorovalle.cl/",
-  ogImage: "/fav.png",
-  phone: "+56927151566",
+  ogImage: "/images/og/og-dental-mirador.jpg",
+  phone: "+56 9 2715 1566",
   email: "a.bacic.v@gmail.com",
   sameAs: [
     "https://www.instagram.com/clinicadental.sb/",
@@ -176,16 +176,16 @@ export const servicesContent = {
 };
 
 export const galleryImages = [
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic1.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic2.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic3.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic4.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic5.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic6.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic7.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic8.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic9.jpeg",
-  "https://dentalmiradorovalle.cl/Images/clinic/clinic10.jpeg",
+  "/images/clinica/clinica-01.webp",
+  "/images/clinica/clinica-02.webp",
+  "/images/clinica/clinica-03.webp",
+  "/images/clinica/clinica-04.webp",
+  "/images/clinica/clinica-05.webp",
+  "/images/clinica/clinica-06.webp",
+  "/images/clinica/clinica-07.webp",
+  "/images/clinica/clinica-08.webp",
+  "/images/clinica/clinica-09.webp",
+  "/images/clinica/clinica-10.webp",
 ];
 
 export const servicesImplantology = [
@@ -313,21 +313,21 @@ export const patients = [
     name: "Margarita",
     procedure: "Recesión gingival",
     images: [
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FwomanOne.jpg?alt=media&token=f2a94829-fb05-4e65-811b-27d9e64b5d04",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FOneThoot.jpg?alt=media&token=2bf5372f-ff7a-4d1f-addd-fb4b7d1b4957",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FtwoThoot.jpg?alt=media&token=c61dd34d-76a8-437d-b38b-85d1aa6c9eb6",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FThreeThoot.jpg?alt=media&token=708d1bf3-8863-49e5-8f57-efd53076fa86",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FfordThoot.jpg?alt=media&token=3764fad4-6981-489f-b453-38b7e11fe2b9",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FwomanTwo.jpg?alt=media&token=97933d10-ecff-4f84-b401-3408b503cddd",
+      "/images/casos/margarita-01.webp",
+      "/images/casos/margarita-02.webp",
+      "/images/casos/margarita-03.webp",
+      "/images/casos/margarita-04.webp",
+      "/images/casos/margarita-05.webp",
+      "/images/casos/margarita-06.webp",
     ],
   },
   {
     name: "Pedro",
     procedure: "Carillas",
     images: [
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FoneSr.jpg?alt=media&token=93b13b20-d541-4ce0-81e9-478279ad84a1",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FtwoSr.jpg?alt=media&token=4a3b8b8f-e802-48fa-a49b-14d249ba0b9e",
-      "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FthreeSr.jpg?alt=media&token=769d99f0-bc06-4168-9f6d-3afe3338013e",
+      "/images/casos/pedro-01.webp",
+      "/images/casos/pedro-02.webp",
+      "/images/casos/pedro-03.webp",
     ],
   },
 ];
@@ -340,13 +340,13 @@ export const paymentContent = {
     {
       badge: "Fonasa",
       title: "Fonasa",
-      image: "https://dentalmiradorovalle.cl/Images/principal/fonasa.jpg",
+      image: "/images/payment/fonasa.webp",
       alt: "Logo Fonasa",
     },
     {
       badge: "Tarjetas y Transbank",
       title: "Tarjetas y Transbank",
-      image: "https://dentalmiradorovalle.cl/Images/principal/transbank.jpg",
+      image: "/images/payment/transbank.webp",
       alt: "Medios de pago con tarjetas Transbank",
     },
   ],

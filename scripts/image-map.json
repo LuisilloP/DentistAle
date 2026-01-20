@@ -1,0 +1,86 @@
+[
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic1.jpeg",
+    "output": "/images/clinica/clinica-01.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic2.jpeg",
+    "output": "/images/clinica/clinica-02.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic3.jpeg",
+    "output": "/images/clinica/clinica-03.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic4.jpeg",
+    "output": "/images/clinica/clinica-04.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic5.jpeg",
+    "output": "/images/clinica/clinica-05.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic6.jpeg",
+    "output": "/images/clinica/clinica-06.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic7.jpeg",
+    "output": "/images/clinica/clinica-07.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic8.jpeg",
+    "output": "/images/clinica/clinica-08.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic9.jpeg",
+    "output": "/images/clinica/clinica-09.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/clinic/clinic10.jpeg",
+    "output": "/images/clinica/clinica-10.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FwomanOne.jpg?alt=media&token=f2a94829-fb05-4e65-811b-27d9e64b5d04",
+    "output": "/images/casos/margarita-01.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FOneThoot.jpg?alt=media&token=2bf5372f-ff7a-4d1f-addd-fb4b7d1b4957",
+    "output": "/images/casos/margarita-02.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FtwoThoot.jpg?alt=media&token=c61dd34d-76a8-437d-b38b-85d1aa6c9eb6",
+    "output": "/images/casos/margarita-03.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FThreeThoot.jpg?alt=media&token=708d1bf3-8863-49e5-8f57-efd53076fa86",
+    "output": "/images/casos/margarita-04.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FfordThoot.jpg?alt=media&token=3764fad4-6981-489f-b453-38b7e11fe2b9",
+    "output": "/images/casos/margarita-05.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2Fwoman%2FwomanTwo.jpg?alt=media&token=97933d10-ecff-4f84-b401-3408b503cddd",
+    "output": "/images/casos/margarita-06.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FoneSr.jpg?alt=media&token=93b13b20-d541-4ce0-81e9-478279ad84a1",
+    "output": "/images/casos/pedro-01.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FtwoSr.jpg?alt=media&token=4a3b8b8f-e802-48fa-a49b-14d249ba0b9e",
+    "output": "/images/casos/pedro-02.webp"
+  },
+  {
+    "source": "https://firebasestorage.googleapis.com/v0/b/dentist-742d9.appspot.com/o/patients%2FthreeSr.jpg?alt=media&token=769d99f0-bc06-4168-9f6d-3afe3338013e",
+    "output": "/images/casos/pedro-03.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/principal/fonasa.jpg",
+    "output": "/images/payment/fonasa.webp"
+  },
+  {
+    "source": "https://dentalmiradorovalle.cl/Images/principal/transbank.jpg",
+    "output": "/images/payment/transbank.webp"
+  }
+]
