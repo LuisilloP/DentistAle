@@ -90,7 +90,7 @@ const servicesCtaLink = buildWhatsAppLink(
 ---
 
 <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.1">
-  <div class="max-w-3xl" data-reveal>
+  <div class="max-w-3xl" data-reveal data-reveal-variant="section">
     <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">
       {servicesContent.badge}
     </p>
@@ -104,6 +104,7 @@ const servicesCtaLink = buildWhatsAppLink(
     class="grid gap-4 md:grid-cols-3"
     data-reveal-group
     data-reveal-stagger="0.08"
+    data-reveal-variant="card"
   >
     {
       servicesContent.steps.map((step) => (
@@ -121,7 +122,7 @@ const servicesCtaLink = buildWhatsAppLink(
     }
   </div>
 
-  <section class="flex flex-col gap-6" data-reveal>
+  <section class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
     <SubTitle
       classAlter="text-white text-3xl md:text-4xl"
       text="Servicios destacados"
@@ -130,6 +131,7 @@ const servicesCtaLink = buildWhatsAppLink(
       class="pt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
       data-reveal-group
       data-reveal-stagger="0.08"
+      data-reveal-variant="card"
     >
       {
         featuredServices.map((service, index) => (
@@ -155,13 +157,14 @@ const servicesCtaLink = buildWhatsAppLink(
     <details
       class="rounded-[2rem] border border-white/10 bg-[#151311] p-6 md:p-8 text-white/80 shadow-xl"
       data-reveal
+      data-reveal-variant="section"
     >
       <summary class="cursor-pointer text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-[#f3eadb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c8ab88]">
         Ver más servicios
       </summary>
       <div class="mt-6 flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
         {mergedServices.length > 0 && (
-          <section class="flex flex-col gap-6" data-reveal>
+          <section class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
             <SubTitle classAlter="text-white text-2xl md:text-3xl" text="Rehabilitación y estética periodontal" />
             <div class="flex flex-col gap-10">
               <ServiceBlock
@@ -179,7 +182,7 @@ const servicesCtaLink = buildWhatsAppLink(
           const chunks = chunkServices(category.services, CHUNK_SIZE);
 
           return (
-            <section class="flex flex-col gap-6" data-reveal>
+            <section class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
               <SubTitle classAlter="text-white text-2xl md:text-3xl" text={category.title} />
               <div class="flex flex-col gap-10">
                 {chunks.map((chunk, chunkIndex) => (

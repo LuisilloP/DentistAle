@@ -19,7 +19,12 @@ interface Props {
 const { services, categoryKey, chunkIndex, isFirstCategory = false } = Astro.props as Props;
 ---
 
-<div class="pt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group data-reveal-stagger="0.08">
+<div
+  class="pt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+  data-reveal-group
+  data-reveal-stagger="0.08"
+  data-reveal-variant="card"
+>
   {services.map((service, index) => {
     const cardId = service.id ?? `${categoryKey}-${service.name}`.toLowerCase().replace(/\s+/g, "-");
     const fetchPriority = isFirstCategory && chunkIndex === 0 && index === 0 ? "high" : "auto";
@@ -32,7 +37,7 @@ const { services, categoryKey, chunkIndex, isFirstCategory = false } = Astro.pro
         text={service.text}
         fetchPriority={fetchPriority}
         data-reveal
-        style={`--reveal-delay:${delay}s;`}
+        data-reveal-delay={delay}
         data-service-id={cardId}
       />
     );

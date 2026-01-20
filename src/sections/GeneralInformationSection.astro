@@ -3,7 +3,12 @@ import { generalInfoContent } from "../data/content";
 ---
 
 <div class="max-w-7xl mx-auto px-4 py-16" data-reveal-group data-reveal-stagger="0.1">
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4" data-reveal-group data-reveal-stagger="0.08">
+  <div
+    class="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+    data-reveal-group
+    data-reveal-stagger="0.08"
+    data-reveal-variant="card"
+  >
     {generalInfoContent.cards.map((card) => (
       <div class="rounded-3xl border border-[#e3d6c6] bg-white/85 p-5 shadow-xl" data-reveal>
         <p class="text-xs uppercase tracking-[0.3em] text-[#6e6254]">{card.badge}</p>

@@ -4,13 +4,13 @@ import { galleryContent, galleryImages } from "../data/content";
 ---
 
 <div class="max-w-6xl mx-auto" data-reveal-group data-reveal-stagger="0.12">
-  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]" data-reveal>{galleryContent.badge}</p>
-  <SubTitle classAlter="text-white" text={galleryContent.title} data-reveal />
-  <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl" data-reveal>
+  <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]" data-reveal data-reveal-variant="text">{galleryContent.badge}</p>
+  <SubTitle classAlter="text-white" text={galleryContent.title} data-reveal data-reveal-variant="section" />
+  <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl" data-reveal data-reveal-variant="text">
     {galleryContent.description}
   </p>
 
-  <div class="mt-8" data-reveal>
+  <div class="mt-8" data-reveal data-reveal-variant="image">
     <swiper-container
       slides-per-view="1"
       space-between="16"

@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { seo } from "../data/content";
 import { buildWhatsAppLink } from "../utils/whatsapp";
+import revealScript from "../scripts/reveal.ts?url";
 
 const baseSeo = seo ?? {};
 const {
@@ -107,51 +108,7 @@ const structuredData = {
     <Header />
     <slot />
     <Footer />
-    <script>
-      (() => {
-        const revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
-        if (revealElements.length === 0) return;
-
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        if (reduceMotion.matches) {
-          revealElements.forEach((el) => el.classList.add("reveal-visible"));
-          return;
-        }
-
-        document.querySelectorAll("[data-reveal-group]").forEach((group) => {
-          const stagger = parseFloat(group.dataset.revealStagger || "0.1");
-          const children = Array.from(group.querySelectorAll("[data-reveal]"));
-          children.forEach((child, index) => {
-            if (!child.dataset.revealDelay) {
-              child.dataset.revealDelay = (index * stagger).toFixed(3);
-            }
-          });
-        });
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const el = entry.target;
-              const once = el.dataset.revealOnce !== "false";
-              const toggle = el.dataset.revealToggle === "true";
-              if (entry.isIntersecting) {
-                const delay = parseFloat(el.dataset.revealDelay || "0");
-                if (delay) {
-                  el.style.setProperty("--reveal-delay", `${delay}s`);
-                }
-                el.classList.add("reveal-visible");
-                if (once) observer.unobserve(el);
-              } else if (toggle) {
-                el.classList.remove("reveal-visible");
-              }
-            });
-          },
-          { threshold: 0.18, rootMargin: "0px 0px -5% 0px" }
-        );
-
-        revealElements.forEach((el) => observer.observe(el));
-      })();
-    </script>
+    <script type="module" src={revealScript}></script>
   </body>
 </html>
 

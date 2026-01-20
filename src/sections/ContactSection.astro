@@ -20,7 +20,7 @@ const panelLink = buildWhatsAppLink(phone, panelMessage);
   data-reveal-group
   data-reveal-stagger="0.14"
 >
-  <div class="flex flex-col gap-6" data-reveal>
+  <div class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
     <div>
       <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">{contact.badge}</p>
       <h2 class="font-title text-3xl md:text-5xl text-[#1b1916]">
@@ -46,6 +46,7 @@ const panelLink = buildWhatsAppLink(phone, panelMessage);
     class="rounded-[2.5rem] bg-[#141311] text-white p-6 md:p-10 shadow-[0_22px_60px_rgba(0,0,0,0.35)] border border-white/10"
     data-reveal
     data-reveal-delay="0.1"
+    data-reveal-variant="card"
   >
     <div class="flex flex-col gap-6">
       <div>

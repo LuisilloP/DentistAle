@@ -10,7 +10,7 @@ const about = aboutContent;
   data-reveal-group
   data-reveal-stagger="0.12"
 >
-  <div class="relative" data-reveal>
+  <div class="relative" data-reveal data-reveal-variant="image">
     <div class="absolute -top-4 -left-4 h-full w-full rounded-[2.5rem] border border-[#c8ab88]/40"></div>
     <img
       src="/images/people/dentistPrincipal.webp"
@@ -28,7 +28,7 @@ const about = aboutContent;
       <p class="text-sm font-semibold text-[#1b1916]">{about.specialtyCard.title}</p>
     </div>
   </div>
-  <div class="flex flex-col gap-6" data-reveal>
+  <div class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
     <div>
       <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">{about.badge}</p>
       <SubTitle text={about.name} />

@@ -4,7 +4,7 @@ import IndexCard from "../components/IndexCard.astro";
 ---
 
 <div class="flex flex-col gap-10" data-reveal-group data-reveal-stagger="0.1">
-  <div class="text-center max-w-3xl mx-auto" data-reveal>
+  <div class="text-center max-w-3xl mx-auto" data-reveal data-reveal-variant="section">
     <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">{indexContent.badge}</p>
     <h2 class="font-title text-3xl md:text-5xl text-[#1b1916]">
       {indexContent.title.prefix}<span class="color-text-beige">{indexContent.title.accent}</span>
@@ -12,7 +12,12 @@ import IndexCard from "../components/IndexCard.astro";
     <p class="mt-4 text-[#4a433b] text-base md:text-lg">{indexContent.description}</p>
   </div>
 
-  <div class="grid gap-6 md:grid-cols-3" data-reveal-group data-reveal-stagger="0.08">
+  <div
+    class="grid gap-6 md:grid-cols-3"
+    data-reveal-group
+    data-reveal-stagger="0.08"
+    data-reveal-variant="card"
+  >
     {indexCards.map((card) => (
       <div data-reveal>
         <IndexCard data={card} />
