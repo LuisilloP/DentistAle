@@ -3,9 +3,4 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  vite: {
-    optimizeDeps: {
-      entries: ["src/pages/**/*.{astro,md,mdx}"],
-    },
-  },
 });

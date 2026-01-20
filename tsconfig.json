@@ -5,6 +5,5 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.astro", "src/**/*.tsx"],
-  "exclude": ["src/app/**"]
+  "include": ["src/**/*.ts", "src/**/*.astro", "src/**/*.tsx"]
 }
