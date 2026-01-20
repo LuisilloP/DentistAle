@@ -36,11 +36,7 @@ const chunkServices = (items: any[], size: number) =>
   }, []);
 
 const normalize = (value: string) =>
-  value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .trim();
+  value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
 
 const featuredOrder = [
   "Emergencia dental",
@@ -53,59 +49,98 @@ const featuredOrder = [
 
 const allServices = Object.values(serviceMap).flat();
 const featuredServices = featuredOrder
-  .map((name) =>
-    allServices.find((service) => normalize(service.name) === normalize(name)) ||
-    allServices.find((service) => normalize(service.name).includes(normalize(name)))
+  .map(
+    (name) =>
+      allServices.find(
+        (service) => normalize(service.name) === normalize(name),
+      ) ||
+      allServices.find((service) =>
+        normalize(service.name).includes(normalize(name)),
+      ),
   )
   .filter(Boolean);
 
-const featuredNames = new Set(featuredServices.map((service) => normalize(service.name)));
+const featuredNames = new Set(
+  featuredServices.map((service) => normalize(service.name)),
+);
+
+const mergedKeys = ["servicesBucalEndo", "servicesEsthetic", "servicesRehabilitation"];
+const mergedServices = mergedKeys
+  .map((key) => getServices(key))
+  .flat()
+  .filter((service) => !featuredNames.has(normalize(service.name)));
+
 const filteredCategories = servicesContent.categories
   .map((category) => {
+    if (mergedKeys.includes(category.itemsKey)) {
+      return null;
+    }
     const services = getServices(category.itemsKey).filter(
-      (service) => !featuredNames.has(normalize(service.name))
+      (service) => !featuredNames.has(normalize(service.name)),
     );
     return { ...category, services };
   })
-  .filter((category) => category.services.length > 0);
+  .filter((category) => category && category.services.length > 0);
 
 const servicesCtaLink = buildWhatsAppLink(
   contactContent.panel.phone,
-  "Hola, quiero agendar una evaluacion."
+  "Hola, quiero agendar una evaluacion.",
 );
 ---
 
 <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.1">
   <div class="max-w-3xl" data-reveal>
-    <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">{servicesContent.badge}</p>
+    <p class="text-xs uppercase tracking-[0.4em] text-[#c8ab88]">
+      {servicesContent.badge}
+    </p>
     <SubTitle classAlter="text-white" text={servicesContent.title} />
     <p class="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
       {servicesContent.description}
     </p>
   </div>
 
-  <div class="grid gap-4 md:grid-cols-3" data-reveal-group data-reveal-stagger="0.08">
-    {servicesContent.steps.map((step) => (
-      <div class="rounded-2xl border border-white/10 bg-[#151311] p-6 text-white/80 shadow-xl" data-reveal>
-        <p class="text-xs uppercase tracking-[0.3em] text-white/60">{step.label}</p>
-        <p class="mt-2 text-lg font-semibold">{step.title}</p>
-        <p class="mt-2 text-sm text-white/70">{step.text}</p>
-      </div>
-    ))}
+  <div
+    class="grid gap-4 md:grid-cols-3"
+    data-reveal-group
+    data-reveal-stagger="0.08"
+  >
+    {
+      servicesContent.steps.map((step) => (
+        <div
+          class="rounded-2xl border border-white/10 bg-[#151311] p-6 text-white/80 shadow-xl"
+          data-reveal
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-white/60">
+            {step.label}
+          </p>
+          <p class="mt-2 text-lg font-semibold">{step.title}</p>
+          <p class="mt-2 text-sm text-white/70">{step.text}</p>
+        </div>
+      ))
+    }
   </div>
 
   <section class="flex flex-col gap-6" data-reveal>
-    <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Servicios destacados" />
-    <div class="pt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group data-reveal-stagger="0.08">
-      {featuredServices.map((service, index) => (
-        <ServiceCard
-          image={service.image}
-          name={service.name}
-          text={service.text}
-          fetchPriority={index === 0 ? "high" : "auto"}
-          data-reveal
-        />
-      ))}
+    <SubTitle
+      classAlter="text-white text-3xl md:text-4xl"
+      text="Servicios destacados"
+    />
+    <div
+      class="pt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      data-reveal-group
+      data-reveal-stagger="0.08"
+    >
+      {
+        featuredServices.map((service, index) => (
+          <ServiceCard
+            image={service.image}
+            name={service.name}
+            text={service.text}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            data-reveal
+          />
+        ))
+      }
     </div>
     <div class="flex flex-wrap items-center gap-3">
       <a
@@ -116,7 +151,9 @@ const servicesCtaLink = buildWhatsAppLink(
       >
         Agenda tu evaluacion por WhatsApp
       </a>
-      <span class="text-xs uppercase tracking-[0.25em] text-white/60">Respuesta rapida</span>
+      <span class="text-xs uppercase tracking-[0.25em] text-white/60"
+        >Respuesta rapida</span
+      >
     </div>
   </section>
 
@@ -129,12 +166,27 @@ const servicesCtaLink = buildWhatsAppLink(
         Ver mas servicios
       </summary>
       <div class="mt-6 flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
+        {mergedServices.length > 0 && (
+          <section class="flex flex-col gap-6" data-reveal>
+            <SubTitle classAlter="text-white text-2xl md:text-3xl" text="Rehabilitación y estética periodontal" />
+            <div class="flex flex-col gap-10">
+              <ServiceBlock
+                services={mergedServices}
+                categoryKey="merged-bucal"
+                blockId="merged-bucal-0"
+                chunkIndex={0}
+                isFirstCategory={false}
+              />
+            </div>
+          </section>
+        )}
+
         {filteredCategories.map((category) => {
           const chunks = chunkServices(category.services, CHUNK_SIZE);
 
           return (
             <section class="flex flex-col gap-6" data-reveal>
-              <SubTitle classAlter="text-white text-3xl md:text-4xl" text={category.title} />
+              <SubTitle classAlter="text-white text-2xl md:text-3xl" text={category.title} />
               <div class="flex flex-col gap-10">
                 {chunks.map((chunk, chunkIndex) => (
                   <ServiceBlock
