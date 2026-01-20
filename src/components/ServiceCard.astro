@@ -15,9 +15,31 @@ const imageFit = name === "Rinomodelaci?n" ? "object-fill" : "object-cover";
 const isHigh = fetchPriority === "high";
 const loading = isHigh ? "eager" : "lazy";
 const phone = contactContent.panel.phone ?? "";
-const ctaLabel = "Conversemos por WhatsApp";
-const ctaSubLabel = `Coordinemos tu ${name.toLowerCase()}`;
-const ctaMessage = `Hola, quiero agendar una evaluacion de ${name}.`;
+
+const normalize = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+
+const normalizedName = normalize(name);
+let ctaLabel = "Agenda tu servicio";
+
+if (normalizedName.includes("emergencia")) {
+  ctaLabel = "Coordina tu emergencia ya";
+} else if (normalizedName.includes("conducto")) {
+  ctaLabel = "Agenda tu tratamiento";
+} else if (normalizedName.includes("implante")) {
+  ctaLabel = "Agenda tu implante";
+} else if (normalizedName.includes("corona")) {
+  ctaLabel = "Agenda tu corona";
+} else if (normalizedName.includes("limpieza")) {
+  ctaLabel = "Coordina tu limpieza";
+} else if (normalizedName.includes("carilla")) {
+  ctaLabel = "Agenda tus carillas";
+}
+
+const ctaMessage = `Hola, quiero agendar ${name}.`;
 const ctaLink = buildWhatsAppLink(phone, ctaMessage);
 ---
 
@@ -49,7 +71,7 @@ const ctaLink = buildWhatsAppLink(phone, ctaMessage);
       <p>{text}</p>
     </div>
     <div class="pt-6 mt-auto">
-      <ButtonContact href={ctaLink} target="_blank" rel="noreferrer noopener" label={ctaLabel} subLabel={ctaSubLabel} />
+      <ButtonContact href={ctaLink} target="_blank" rel="noreferrer noopener" label={ctaLabel} />
     </div>
   </div>
 </article>
