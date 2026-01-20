@@ -15,8 +15,8 @@ const imageFit = name === "Rinomodelaci?n" ? "object-fill" : "object-cover";
 const isHigh = fetchPriority === "high";
 const loading = isHigh ? "eager" : "lazy";
 const phone = contactContent.panel.phone ?? "";
-const ctaLabel = "Agendar por WhatsApp";
-const ctaSubLabel = `Servicio: ${name}`;
+const ctaLabel = "Conversemos por WhatsApp";
+const ctaSubLabel = `Coordinemos tu ${name.toLowerCase()}`;
 const ctaMessage = `Hola, quiero agendar una evaluacion de ${name}.`;
 const ctaLink = buildWhatsAppLink(phone, ctaMessage);
 ---
