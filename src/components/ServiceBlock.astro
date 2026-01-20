@@ -16,67 +16,25 @@ interface Props {
   isFirstCategory?: boolean;
 }
 
-const { services, categoryKey, blockId, chunkIndex, isFirstCategory = false } = Astro.props as Props;
-const rows = Math.ceil(services.length / 2) || 1;
-const placeholderHeight = `${Math.max(420, rows * 360)}px`;
+const { services, categoryKey, chunkIndex, isFirstCategory = false } = Astro.props as Props;
 ---
 
-<div
-  class="service-block-wrapper"
-  data-service-block
-  data-block-id={blockId}
-  data-block-size={services.length}
-  style={`--block-rows:${rows};--block-placeholder-height:${placeholderHeight};`}
->
-  <div class="service-block-placeholder" data-block-placeholder aria-hidden="true">
-    <div class="service-block-placeholder-glow" />
-  </div>
+<div class="pt-6 grid gap-6 md:grid-cols-2" data-reveal-group data-reveal-stagger="0.08">
+  {services.map((service, index) => {
+    const cardId = service.id ?? `${categoryKey}-${service.name}`.toLowerCase().replace(/\s+/g, "-");
+    const fetchPriority = isFirstCategory && chunkIndex === 0 && index === 0 ? "high" : "auto";
+    const delay = (index * 0.08).toFixed(2);
 
-  <template data-block-template>
-    <div class="pt-6 grid gap-6 md:grid-cols-2" data-reveal-group data-reveal-stagger="0.08">
-      {services.map((service, index) => {
-        const cardId = service.id ?? `${categoryKey}-${service.name}`.toLowerCase().replace(/\s+/g, "-");
-        const fetchPriority = isFirstCategory && chunkIndex === 0 && index === 0 ? "high" : "auto";
-        const delay = (index * 0.08).toFixed(2);
-
-        return (
-          <ServiceCard
-            image={service.image}
-            name={service.name}
-            text={service.text}
-            fetchPriority={fetchPriority}
-            data-reveal
-            style={`--reveal-delay:${delay}s;`}
-            data-service-id={cardId}
-          />
-        );
-      })}
-    </div>
-  </template>
+    return (
+      <ServiceCard
+        image={service.image}
+        name={service.name}
+        text={service.text}
+        fetchPriority={fetchPriority}
+        data-reveal
+        style={`--reveal-delay:${delay}s;`}
+        data-service-id={cardId}
+      />
+    );
+  })}
 </div>
-
-<style>
-  .service-block-wrapper {
-    position: relative;
-  }
-
-  .service-block-placeholder {
-    min-height: var(--block-placeholder-height, 520px);
-    background: linear-gradient(135deg, rgba(17, 16, 14, 0.9), rgba(17, 16, 14, 0.72));
-    border-radius: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    overflow: hidden;
-    padding: 1.5rem 1rem 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32);
-  }
-
-  .service-block-placeholder-glow {
-    width: 110%;
-    height: 100%;
-    transform: translateX(-5%);
-    background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.06), transparent 35%),
-      radial-gradient(circle at 80% 40%, rgba(200, 171, 136, 0.08), transparent 42%),
-      linear-gradient(120deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-    filter: blur(1px);
-  }
-</style>

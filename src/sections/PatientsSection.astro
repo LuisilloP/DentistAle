@@ -49,7 +49,7 @@ const patientsCtaLink = buildWhatsAppLink(
                     width="1200"
                     height="800"
                     alt={`Caso clinico de ${patient.name} ${index + 1}`}
-                    loading="eager"
+                    loading="lazy"
                     decoding="async"
                     class="block h-full w-full object-cover"
                   />
@@ -64,6 +64,8 @@ const patientsCtaLink = buildWhatsAppLink(
   </div>
 
   <div class="mt-8 flex flex-col gap-4 text-sm text-white/70" data-reveal>
+    <p>{patientsContent.disclaimer?.results}</p>
+    <p>{patientsContent.disclaimer?.consent}</p>
     <a
       href={patientsCtaLink}
       target="_blank"

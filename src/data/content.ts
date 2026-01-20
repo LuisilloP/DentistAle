@@ -57,6 +57,12 @@ export const aboutContent = {
   badge: "Sobre mí",
   name: "Alejandro Bacic Varas",
   chips: ["Implantología oral", "Rehabilitación protésica", "Odontología estética", "Atención cercana"],
+  trustBullets: [
+    "Ubicacion en Ovalle, Coquimbo",
+    "Atencion personalizada y cercana",
+    "Enfoque profesional con planes a medida",
+    "Acompanamiento claro en cada etapa",
+  ],
   paragraphs: [
     "Soy el Dr. Alejandro Bacic, especialista en implantología oral y rehabilitación protésica. Mi propósito es ayudarte a recuperar función, salud y confianza al sonreír, mediante tratamientos planificados con precisión y pensados para resultados naturales y duraderos.",
     "En mi atención priorizo un trato cercano y transparente: escucho tus necesidades, evalúo tu caso en detalle y te explico cada etapa de forma clara para que tomes decisiones informadas y con tranquilidad. Entiendo que muchas personas llegan con nervios o experiencias previas difíciles, por eso me enfoco en que te sientas acompañado(a) y seguro(a) desde el primer momento.",
@@ -312,6 +318,10 @@ export const patientsContent = {
     "Casos reales de tratamientos personalizados. Cada sonrisa refleja dedicación, precisión y un plan a medida.",
   caseLabel: "Caso clínico",
   slideHint: "Desliza la galería",
+  disclaimer: {
+    results: "Resultados pueden variar segun cada paciente.",
+    consent: "Imagenes publicadas con autorizacion del paciente.",
+  },
 };
 
 export const patients = [

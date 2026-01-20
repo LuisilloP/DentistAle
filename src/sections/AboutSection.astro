@@ -16,6 +16,10 @@ const about = aboutContent;
       src="/images/people/dentistPrincipal.webp"
       class="relative h-[28rem] md:h-[34rem] w-full object-cover object-[50%_60%] rounded-[2.5rem] shadow-2xl"
       alt="Dr. Alejandro Bacic en la clinica"
+      width="680"
+      height="1020"
+      loading="lazy"
+      decoding="async"
     />
     <div
       class="absolute -bottom-6 right-6 bg-white/90 border border-[#e3d6c6] rounded-2xl px-4 py-3 shadow-xl"
@@ -34,6 +38,13 @@ const about = aboutContent;
         <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center">{chip}</span>
       ))}
     </div>
+    {about.trustBullets?.length > 0 && (
+      <ul class="grid gap-2 text-sm uppercase tracking-[0.2em] text-[#6e6254] sm:grid-cols-2">
+        {about.trustBullets.map((item) => (
+          <li class="rounded-2xl border border-[#d7c7b4]/60 bg-white/60 px-4 py-2 text-center">{item}</li>
+        ))}
+      </ul>
+    )}
     <div class="flex flex-col gap-5 text-[#3f3831] text-base md:text-lg leading-relaxed">
       {about.paragraphs.map((paragraph) => (
         <p>{paragraph}</p>

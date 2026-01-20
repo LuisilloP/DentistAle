@@ -1,6 +1,8 @@
 ---
 import SubTitle from "../components/SubTitle.astro";
 import ServiceBlock from "../components/ServiceBlock.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { buildWhatsAppLink } from "../utils/whatsapp";
 import {
   servicesContent,
   servicesImplantology,
@@ -9,6 +11,7 @@ import {
   servicesEsthetic,
   servicesRehabilitation,
   servicesFacial,
+  contactContent,
 } from "../data/content";
 
 const serviceMap: Record<string, any[]> = {
@@ -31,6 +34,45 @@ const chunkServices = (items: any[], size: number) =>
     acc[groupIndex].push(item);
     return acc;
   }, []);
+
+const normalize = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .trim();
+
+const featuredOrder = [
+  "Emergencia dental",
+  "Tratamiento de conducto",
+  "Implante simple",
+  "Coronas",
+  "Limpieza",
+  "Pulido radicular",
+];
+
+const allServices = Object.values(serviceMap).flat();
+const featuredServices = featuredOrder
+  .map((name) =>
+    allServices.find((service) => normalize(service.name) === normalize(name)) ||
+    allServices.find((service) => normalize(service.name).includes(normalize(name)))
+  )
+  .filter(Boolean);
+
+const featuredNames = new Set(featuredServices.map((service) => normalize(service.name)));
+const filteredCategories = servicesContent.categories
+  .map((category) => {
+    const services = getServices(category.itemsKey).filter(
+      (service) => !featuredNames.has(normalize(service.name))
+    );
+    return { ...category, services };
+  })
+  .filter((category) => category.services.length > 0);
+
+const servicesCtaLink = buildWhatsAppLink(
+  contactContent.panel.phone,
+  "Hola, quiero agendar una evaluacion."
+);
 ---
 
 <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.1">
@@ -52,68 +94,62 @@ const chunkServices = (items: any[], size: number) =>
     ))}
   </div>
 
-  <div class="flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
-    {servicesContent.categories.map((category) => {
-      const services = getServices(category.itemsKey);
-      const chunks = chunkServices(services, CHUNK_SIZE);
+  <section class="flex flex-col gap-6" data-reveal>
+    <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Servicios destacados" />
+    <div class="pt-4 grid gap-6 md:grid-cols-2" data-reveal-group data-reveal-stagger="0.08">
+      {featuredServices.map((service, index) => (
+        <ServiceCard
+          image={service.image}
+          name={service.name}
+          text={service.text}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          data-reveal
+        />
+      ))}
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <a
+        href={servicesCtaLink}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="inline-flex items-center justify-center rounded-full bg-[#25D366] px-5 py-3 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-[#0b0f0c] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
+      >
+        Agenda tu evaluacion por WhatsApp
+      </a>
+      <span class="text-xs uppercase tracking-[0.25em] text-white/60">Respuesta rapida</span>
+    </div>
+  </section>
 
-      return (
-        <section class="flex flex-col gap-6" data-reveal>
-          <SubTitle classAlter="text-white text-3xl md:text-4xl" text={category.title} />
-          <div class="flex flex-col gap-10">
-            {chunks.map((chunk, chunkIndex) => (
-              <ServiceBlock
-                services={chunk}
-                categoryKey={category.itemsKey}
-                blockId={`${category.itemsKey}-${chunkIndex}`}
-                chunkIndex={chunkIndex}
-                isFirstCategory={category.itemsKey === firstCategoryKey}
-              />
-            ))}
-          </div>
-        </section>
-      );
-    })}
-  </div>
+  {filteredCategories.length > 0 && (
+    <details
+      class="rounded-[2rem] border border-white/10 bg-[#151311] p-6 md:p-8 text-white/80 shadow-xl"
+      data-reveal
+    >
+      <summary class="cursor-pointer text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-[#f3eadb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c8ab88]">
+        Ver mas servicios
+      </summary>
+      <div class="mt-6 flex flex-col gap-12" data-reveal-group data-reveal-stagger="0.12">
+        {filteredCategories.map((category) => {
+          const chunks = chunkServices(category.services, CHUNK_SIZE);
+
+          return (
+            <section class="flex flex-col gap-6" data-reveal>
+              <SubTitle classAlter="text-white text-3xl md:text-4xl" text={category.title} />
+              <div class="flex flex-col gap-10">
+                {chunks.map((chunk, chunkIndex) => (
+                  <ServiceBlock
+                    services={chunk}
+                    categoryKey={category.itemsKey}
+                    blockId={`${category.itemsKey}-${chunkIndex}`}
+                    chunkIndex={chunkIndex}
+                    isFirstCategory={category.itemsKey === firstCategoryKey}
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    </details>
+  )}
 </div>
-
-<script>
-  import { createInViewOnce } from "../utils/useInViewOnce";
-
-  const blocks = Array.from(document.querySelectorAll("[data-service-block]"));
-  if (blocks.length > 0) {
-    const inView = createInViewOnce({ rootMargin: "300px 0px", threshold: 0.05, once: true });
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const activateBlock = (block) => {
-      if (block.dataset.loaded === "true") return;
-      const template = block.querySelector("template[data-block-template]");
-      if (!template) return;
-
-      const placeholder = block.querySelector("[data-block-placeholder]");
-      const fragment = template.content.cloneNode(true);
-
-      block.appendChild(fragment);
-      placeholder?.remove();
-      template.remove();
-      block.dataset.loaded = "true";
-
-      const revealItems = Array.from(block.querySelectorAll("[data-reveal]"));
-      if (revealItems.length > 0) {
-        const reveal = () => {
-          revealItems.forEach((el) => el.classList.add("reveal-visible"));
-        };
-
-        if (reduceMotion.matches) {
-          reveal();
-        } else {
-          requestAnimationFrame(() => requestAnimationFrame(reveal));
-        }
-      }
-    };
-
-    blocks.forEach((block) => {
-      inView.observe(block, () => activateBlock(block));
-    });
-  }
-</script>
