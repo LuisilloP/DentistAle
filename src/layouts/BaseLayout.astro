@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { seo } from "../data/content";
+import { buildWhatsAppLink } from "../utils/whatsapp";
 
 const baseSeo = seo ?? {};
 const {
@@ -26,6 +27,7 @@ const sameAs = baseSeo.sameAs ?? [
 ];
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : canonical;
 const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).toString() : ogImage;
+const whatsappLink = buildWhatsAppLink(phone, "Hola, quiero agendar una evaluacion.");
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Dentist",
@@ -86,12 +88,14 @@ const structuredData = {
   </head>
   <body>
     <a
-      class="w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80"
-      href="https://wa.me/56927151566?text=Hola,%20Estoy%20interesado%20en%20tus%20servicios%20odontol%C3%B3gicos."
+      class="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#0b0f0c] shadow-[0_12px_30px_rgba(37,211,102,0.4)] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b1916] sm:px-3 sm:py-3 animation-pulse"
+      href={whatsappLink}
       target="_blank"
       rel="noreferrer noopener"
+      aria-label="Agendar por WhatsApp"
     >
-      <img src="/svg/whatsappButton.svg" alt="Boton de WhatsApp" class="rounded-full" />
+      <img src="/svg/whatsappButton.svg" alt="" class="h-5 w-5" aria-hidden="true" />
+      <span class="sm:hidden">Agendar</span>
     </a>
     <Header />
     <slot />

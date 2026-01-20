@@ -35,6 +35,12 @@ export const heroContent = {
     "Nuestra clínica está comprometida en abordar la ansiedad dental al crear un ambiente relajante y al destacar la experiencia y precisión de nuestros odontólogos estéticos. Encuentra la sonrisa que exprese tu bienestar.",
   ],
   bullets: ["Atención personalizada", "Agenda rápida", "Enfoque integral", "Resultados duraderos"],
+  ctaPrimary: {
+    label: "Agendar por WhatsApp",
+    waText: "Hola, quiero agendar una evaluacion por WhatsApp.",
+    helper: "Respuesta rapida",
+  },
+  ctaCallLabel: "Llamar",
   ctaSecondary: "Conoce nuestros servicios",
   ribbon: {
     badge: "Atención inmediata",
@@ -115,11 +121,11 @@ export const contactContent = {
     badge: "WhatsApp",
     title: "Agenda por WhatsApp, más rápido.",
     subtitle: "Te respondemos para coordinar tu evaluación y los próximos pasos de tu tratamiento.",
-    ctaLabel: "Abrir WhatsApp",
+    ctaLabel: "Agendar por WhatsApp",
     whatsappLabel: "WhatsApp directo",
-    phone: "+56 9 3588 6949",
+    phone: "+56 9 2715 1566",
     waText: "Hola Dr. Alejandro Bacic, quiero agendar una evaluación. Mi nombre es ____ y mi consulta es ____.",
-    microcopy: "Respuesta en horario de atención - Atención cercana y personalizada",
+    microcopy: "Respuesta rapida en horario de atencion - Atencion cercana y personalizada",
   },
   chips: [
     {

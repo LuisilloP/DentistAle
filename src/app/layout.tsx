@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="es">
 
       <body className={`${inter.variable} ${dmSerif.variable} ${inter.className}`}>
-        <Link target='__blank' href={"https://wa.me/56927151566?text=Hola,%20Estoy%20Interesado%20en%20tus%20servicios%20odontologicos%20"} className='w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80'><Image src={whatsappButton} alt="btn_whatsapp" className=' rounded-full '></Image></Link>
+        <Link target='__blank' href={"https://wa.me/56927151566?text=Hola,%20Quiero%20agendar%20una%20evaluacion."} aria-label="Agendar por WhatsApp" className='w-16 fixed bottom-4 rounded-full right-4 z-50 cursor-pointer animation-pulse hover:opacity-80'><Image src={whatsappButton} alt="" className=' rounded-full '></Image></Link>
         <Header />
         {children}
         <Footer />

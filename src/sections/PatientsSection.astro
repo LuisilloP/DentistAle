@@ -1,6 +1,12 @@
 ---
 import SubTitle from "../components/SubTitle.astro";
-import { patients, patientsContent } from "../data/content";
+import { patients, patientsContent, contactContent } from "../data/content";
+import { buildWhatsAppLink } from "../utils/whatsapp";
+
+const patientsCtaLink = buildWhatsAppLink(
+  contactContent.panel.phone,
+  "Hola, quiero agendar una evaluacion."
+);
 ---
 
 <div class="max-w-6xl mx-auto px-4 py-16" data-reveal-group data-reveal-stagger="0.12">
@@ -55,5 +61,16 @@ import { patients, patientsContent } from "../data/content";
         </div>
       </div>
     ))}
+  </div>
+
+  <div class="mt-8 flex flex-col gap-4 text-sm text-white/70" data-reveal>
+    <a
+      href={patientsCtaLink}
+      target="_blank"
+      rel="noreferrer noopener"
+      class="inline-flex w-fit items-center justify-center rounded-full bg-[#25D366] px-5 py-3 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-[#0b0f0c] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
+    >
+      Agenda tu evaluacion por WhatsApp
+    </a>
   </div>
 </div>
