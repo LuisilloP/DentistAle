@@ -4,11 +4,11 @@ const { href = "#contact", label = "Reservar hora", ...rest } = Astro.props;
 
 <a
   href={href}
-  class="relative inline-flex text-sm md:text-base group cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b1916]"
+  class="relative inline-flex text-[0.8rem] md:text-sm group cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b1916]"
   {...rest}
 >
   <span
-    class="relative z-10 block px-7 py-3 overflow-hidden font-semibold tracking-[0.2em] uppercase leading-tight text-[#1b1916] transition-colors duration-300 ease-out bg-[#c8ab88] rounded-full border border-[#e6d2bb]"
+    class="relative z-10 block px-6 py-3 overflow-hidden font-semibold tracking-[0.12em] uppercase leading-tight text-[#1b1916] transition-colors duration-300 ease-out bg-[#c8ab88] rounded-full border border-[#e6d2bb] shadow-[0_10px_25px_rgba(200,171,136,0.35)]"
   >
     <span class="absolute inset-0 w-full h-full bg-[#e7d3ba] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
     <span class="relative">{label}</span>

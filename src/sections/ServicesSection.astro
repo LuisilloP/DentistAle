@@ -25,7 +25,7 @@ const serviceMap: Record<string, any[]> = {
 
 const getServices = (key: string) => serviceMap[key] ?? [];
 const firstCategoryKey = servicesContent.categories[0]?.itemsKey ?? "";
-const CHUNK_SIZE = 4; // Ajusta este valor para cargar mas o menos cards por bloque.
+const CHUNK_SIZE = 6; // Ajusta este valor para cargar mas o menos cards por bloque.
 
 const chunkServices = (items: any[], size: number) =>
   items.reduce<any[][]>((acc, item, index) => {
@@ -96,7 +96,7 @@ const servicesCtaLink = buildWhatsAppLink(
 
   <section class="flex flex-col gap-6" data-reveal>
     <SubTitle classAlter="text-white text-3xl md:text-4xl" text="Servicios destacados" />
-    <div class="pt-4 grid gap-6 md:grid-cols-2" data-reveal-group data-reveal-stagger="0.08">
+    <div class="pt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group data-reveal-stagger="0.08">
       {featuredServices.map((service, index) => (
         <ServiceCard
           image={service.image}
@@ -112,7 +112,7 @@ const servicesCtaLink = buildWhatsAppLink(
         href={servicesCtaLink}
         target="_blank"
         rel="noreferrer noopener"
-        class="inline-flex items-center justify-center rounded-full bg-[#25D366] px-5 py-3 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-[#0b0f0c] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
+        class="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-[0.78rem] md:text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0f0c] shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition hover:bg-[#38e377] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3eadb]"
       >
         Agenda tu evaluacion por WhatsApp
       </a>

@@ -42,7 +42,7 @@ const heroTelLink = heroPhone ? `tel:+${heroPhone.replace(/\D/g, "")}` : "tel:+5
           />
           <a
             href={heroTelLink}
-            class="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm md:text-base font-semibold text-white/90 transition hover:border-white hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
+            class="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-[0.78rem] md:text-sm font-semibold uppercase tracking-[0.12em] text-white/90 transition hover:border-white hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
           >
             {hero.ctaCallLabel ?? "Llamar"}
           </a>
@@ -64,22 +64,22 @@ const heroTelLink = heroPhone ? `tel:+${heroPhone.replace(/\D/g, "")}` : "tel:+5
 
     <div class="relative group" data-reveal>
       <div class="relative h-[22rem] md:h-[30rem] lg:h-[34rem] rounded-[2.5rem] overflow-hidden shadow-2xl">
-        <div class="absolute inset-x-0 top-0 h-1/2 overflow-hidden transition-transform duration-700 group-hover:translate-y-3 fade-down bg-[#0f0e0c]">
+        <div class="absolute inset-x-0 top-0 h-1/2 overflow-hidden transition-transform duration-700 group-hover:translate-y-3 bg-[#0f0e0c]">
           <img
             src="/images/hero/thooths.png"
             alt="Detalle de sonrisa saludable"
-            class="h-full w-full object-contain object-center"
+            class="h-full w-full object-contain object-center fade-down"
             loading="eager"
             decoding="async"
             width="3200"
             height="822"
           />
         </div>
-        <div class="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden transition-transform duration-700 group-hover:-translate-y-3 fade-up bg-[#0f0e0c]">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden transition-transform duration-700 group-hover:-translate-y-3 bg-[#0f0e0c]">
           <img
             src="/images/hero/inferior.png"
             alt="Implantes dentales en clinica"
-            class="h-full w-full object-contain object-center"
+            class="h-full w-full object-contain object-center fade-up"
             loading="eager"
             decoding="async"
             width="3200"

@@ -1,5 +1,7 @@
 ---
 import ButtonContact from "./ButtonContact.astro";
+import { buildWhatsAppLink } from "../utils/whatsapp";
+import { contactContent } from "../data/content";
 
 interface Props {
   image: string;
@@ -9,17 +11,22 @@ interface Props {
 }
 
 const { image, name, text, fetchPriority = "auto", ...rest } = Astro.props as Props & Record<string, any>;
-const imageFit = name === "Rinomodelación" ? "object-fill" : "object-cover";
+const imageFit = name === "Rinomodelaci?n" ? "object-fill" : "object-cover";
 const isHigh = fetchPriority === "high";
 const loading = isHigh ? "eager" : "lazy";
+const phone = contactContent.panel.phone ?? "";
+const ctaLabel = "Agendar";
+const ctaSubLabel = name;
+const ctaMessage = `Hola, quiero agendar una evaluacion de ${name}.`;
+const ctaLink = buildWhatsAppLink(phone, ctaMessage);
 ---
 
 <article
-  class="hover-card group overflow-hidden rounded-[2rem] border border-white/10 bg-[#11100e] shadow-[0_22px_50px_rgba(0,0,0,0.45)]"
+  class="hover-card group flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#11100e] shadow-[0_22px_50px_rgba(0,0,0,0.45)]"
   data-reveal
   {...rest}
 >
-  <div class="relative h-52 md:h-56 overflow-hidden rounded-[1.6rem] bg-[#100f0d]">
+  <div class="relative aspect-[3/2] overflow-hidden rounded-[1.6rem] bg-[#100f0d]">
     <img
       class={`card-image h-full w-full ${imageFit} transition-transform duration-500`}
       src={image}
@@ -31,16 +38,18 @@ const loading = isHigh ? "eager" : "lazy";
       width="640"
       height="420"
       fetchpriority={fetchPriority}
-      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 45vw, 100vw"
+      sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
     />
     <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-70"></div>
   </div>
-  <div class="p-6 text-sm md:text-base text-white/75 leading-relaxed">
-    <h3 class="text-2xl font-title text-white">{name}</h3>
-    <div class="h-[3px] w-16 rounded-full bg-[linear-gradient(90deg,#EA0892,#FECD53)] my-4"></div>
-    <p>{text}</p>
-    <div class="pt-6">
-      <ButtonContact />
+  <div class="flex flex-1 flex-col p-6 text-sm md:text-base text-white/75 leading-relaxed">
+    <div class="flex-1">
+      <h3 class="text-2xl font-title text-white">{name}</h3>
+      <div class="h-[3px] w-16 rounded-full bg-[linear-gradient(90deg,#EA0892,#FECD53)] my-4"></div>
+      <p>{text}</p>
+    </div>
+    <div class="pt-6 mt-auto">
+      <ButtonContact href={ctaLink} target="_blank" rel="noreferrer noopener" label={ctaLabel} subLabel={ctaSubLabel} />
     </div>
   </div>
 </article>
