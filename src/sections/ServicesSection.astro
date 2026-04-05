@@ -122,15 +122,17 @@ const servicesCtaLink = buildWhatsAppLink(
     }
   </div>
 
-  <section class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
+  <section class="flex flex-col gap-6">
     <SubTitle
       classAlter="text-white text-3xl md:text-4xl"
       text="Servicios destacados"
+      data-reveal
+      data-reveal-variant="section"
     />
     <div
       class="pt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
       data-reveal-group
-      data-reveal-stagger="0.08"
+      data-reveal-stagger="0.07"
       data-reveal-variant="card"
     >
       {
@@ -142,10 +144,10 @@ const servicesCtaLink = buildWhatsAppLink(
             fetchPriority={index === 0 ? "high" : "auto"}
             data-reveal
           />
-        ))
-      }
+      ))
+    }
     </div>
-    <div class="flex flex-wrap items-center gap-3">
+    <div class="flex flex-wrap items-center gap-3" data-reveal data-reveal-variant="item" data-reveal-delay="0.08">
       <WhatsAppButton href={servicesCtaLink} label="Agenda tu evaluación por WhatsApp" />
       <span class="text-xs uppercase tracking-[0.25em] text-white/60"
         >Respuesta rápida</span

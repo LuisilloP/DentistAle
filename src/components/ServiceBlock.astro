@@ -28,7 +28,7 @@ const { services, categoryKey, chunkIndex, isFirstCategory = false } = Astro.pro
   {services.map((service, index) => {
     const cardId = service.id ?? `${categoryKey}-${service.name}`.toLowerCase().replace(/\s+/g, "-");
     const fetchPriority = isFirstCategory && chunkIndex === 0 && index === 0 ? "high" : "auto";
-    const delay = (index * 0.08).toFixed(2);
+    const delay = Math.min(index * 0.07, 0.35).toFixed(2);
 
     return (
       <ServiceCard

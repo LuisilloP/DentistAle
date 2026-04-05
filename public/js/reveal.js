@@ -1,8 +1,12 @@
 (() => {
   const DEFAULTS = {
     stagger: 0.12,
-    threshold: 0.2,
-    rootMargin: "0px 0px -12% 0px",
+    threshold: 0.18,
+    rootMargin: "0px 0px -10% 0px",
+  };
+  const MOBILE_DEFAULTS = {
+    threshold: 0.06,
+    rootMargin: "0px 0px 18% 0px",
   };
   const ROOT_CLASS = "reveal-ready";
 
@@ -72,7 +76,9 @@
       const staggerValue = Number.parseFloat(group.dataset.revealStagger || `${DEFAULTS.stagger}`);
       const stagger = Number.isFinite(staggerValue) ? staggerValue : DEFAULTS.stagger;
       const inheritVariant = group.dataset.revealVariant;
-      const children = Array.from(group.querySelectorAll("[data-reveal]"));
+      const children = Array.from(group.children).filter(
+        (child) => child instanceof HTMLElement && child.matches("[data-reveal]")
+      );
 
       children.forEach((child, index) => {
         if (inheritVariant && !child.dataset.revealVariant) {
@@ -106,6 +112,10 @@
       return;
     }
 
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    const observerThreshold = isMobile ? MOBILE_DEFAULTS.threshold : DEFAULTS.threshold;
+    const observerRootMargin = isMobile ? MOBILE_DEFAULTS.rootMargin : DEFAULTS.rootMargin;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -123,8 +133,8 @@
         });
       },
       {
-        threshold: DEFAULTS.threshold,
-        rootMargin: DEFAULTS.rootMargin,
+        threshold: observerThreshold,
+        rootMargin: observerRootMargin,
       }
     );
 

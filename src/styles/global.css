@@ -293,6 +293,24 @@ swiper-container::part(pagination) {
   --reveal-duration: 0.65s;
 }
 
+#services [data-reveal][data-reveal-variant="card"] {
+  --reveal-duration: 0.62s;
+  --reveal-translate: 14px;
+}
+
+@media (max-width: 767px) {
+  #services [data-reveal][data-reveal-variant="section"],
+  #services [data-reveal][data-reveal-variant="item"] {
+    --reveal-duration: 0.5s;
+    --reveal-translate: 12px;
+  }
+
+  #services [data-reveal][data-reveal-variant="card"] {
+    --reveal-duration: 0.48s;
+    --reveal-translate: 10px;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
     will-change: transform, opacity;

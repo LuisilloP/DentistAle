@@ -14,7 +14,7 @@ const about = aboutContent;
     <div class="absolute -top-4 -left-4 h-full w-full rounded-[2.5rem] border border-[#c8ab88]/40"></div>
     <img
       src="/images/people/dentistPrincipal.webp"
-      class="relative h-[28rem] md:h-[34rem] w-full object-cover object-[50%_60%] rounded-[2.5rem] shadow-2xl"
+      class="relative h-[24rem] sm:h-[28rem] md:h-[34rem] w-full object-cover object-[50%_40%] sm:object-[50%_45%] md:object-[50%_50%] rounded-[2.5rem] shadow-2xl"
       alt="Dr. Alejandro Bacic en la clínica"
       width="680"
       height="1020"
@@ -28,24 +28,34 @@ const about = aboutContent;
       <p class="text-sm font-semibold text-[#1b1916]">{about.specialtyCard.title}</p>
     </div>
   </div>
+
   <div class="flex flex-col gap-6" data-reveal data-reveal-variant="section">
     <div>
       <p class="text-xs uppercase tracking-[0.4em] text-[#6e6254]">{about.badge}</p>
       <SubTitle text={about.name} />
     </div>
-    <div class="grid gap-2 text-xs uppercase tracking-[0.2em] text-[#6e6254] sm:grid-cols-2">
+
+    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.18em] text-[#6e6254]">
       {about.chips.map((chip) => (
-        <span class="rounded-full border border-[#d7c7b4] px-3 py-2 text-center">{chip}</span>
+        <span class="inline-flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#c8ab88]"></span>
+          {chip}
+        </span>
       ))}
     </div>
+
     {about.trustBullets?.length > 0 && (
-      <ul class="grid gap-2 text-sm uppercase tracking-[0.2em] text-[#6e6254] sm:grid-cols-2">
+      <ul class="grid gap-2 text-sm text-[#4a433b] sm:grid-cols-2">
         {about.trustBullets.map((item) => (
-          <li class="rounded-2xl border border-[#d7c7b4]/60 bg-white/60 px-4 py-2 text-center">{item}</li>
+          <li class="inline-flex items-start gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full bg-[#c8ab88]"></span>
+            <span>{item}</span>
+          </li>
         ))}
       </ul>
     )}
-    <div class="flex flex-col gap-5 text-[#3f3831] text-base md:text-lg leading-relaxed">
+
+    <div class="flex flex-col gap-4 text-[#3f3831] text-base md:text-lg leading-relaxed">
       {about.paragraphs.map((paragraph) => (
         <p>{paragraph}</p>
       ))}

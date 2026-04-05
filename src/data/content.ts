@@ -31,8 +31,8 @@ export const heroContent = {
     suffix: " de primer nivel",
   },
   description: [
-    "Un dentista en Ovalle, en sintonía con las inquietudes y necesidades de nuestros pacientes. Adoptamos un enfoque integral en la atención dental y proporcionamos tratamientos que se centran en resultados a largo plazo.",
-    "Nuestra clínica está comprometida en abordar la ansiedad dental al crear un ambiente relajante y al destacar la experiencia y precisión de nuestros odontólogos estéticos. Encuentra la sonrisa que exprese tu bienestar.",
+    "En Ovalle te atendemos de forma cercana, escuchando lo que realmente necesitas. Evaluamos tu caso de manera integral y proponemos tratamientos pensados para cuidar tu salud bucal a largo plazo.",
+    "Sabemos que ir al dentista puede generar nervios. Por eso trabajamos en un ambiente tranquilo, con explicaciones claras y un trato humano en cada etapa, para que te sientas seguro(a) y recuperes tu sonrisa con confianza.",
   ],
   bullets: ["Atención personalizada", "Agenda rápida", "Enfoque integral", "Resultados duraderos"],
   ctaPrimary: {
@@ -56,17 +56,15 @@ export const bannerDentContent = {
 export const aboutContent = {
   badge: "Sobre mí",
   name: "Alejandro Bacic Varas",
-  chips: ["Implantología oral", "Rehabilitación protésica", "Odontología estética", "Atención cercana"],
+  chips: ["Implantología oral", "Rehabilitación protésica", "Odontología estética"],
   trustBullets: [
-    "Ubicación en Ovalle, Coquimbo",
-    "Atención personalizada y cercana",
-    "Enfoque profesional con planes a medida",
-    "Acompañamiento claro en cada etapa",
+    "Atención personalizada en Ovalle, Coquimbo",
+    "Planes de tratamiento claros y a medida",
+    "Acompañamiento cercano en cada etapa",
   ],
   paragraphs: [
-    "Soy el Dr. Alejandro Bacic, especialista en implantología oral y rehabilitación protésica. Mi propósito es ayudarte a recuperar función, salud y confianza al sonreír, mediante tratamientos planificados con precisión y pensados para resultados naturales y duraderos.",
-    "En mi atención priorizo un trato cercano y transparente: escucho tus necesidades, evalúo tu caso en detalle y te explico cada etapa de forma clara para que tomes decisiones informadas y con tranquilidad. Entiendo que muchas personas llegan con nervios o experiencias previas difíciles, por eso me enfoco en que te sientas acompañado(a) y seguro(a) desde el primer momento.",
-    "Creo que una rehabilitación de calidad va más allá de lo estético: debe sentirse bien, funcionar correctamente y mantenerse en el tiempo. Por eso, cada tratamiento se diseña de manera personalizada, buscando el equilibrio entre estética, funcionalidad y comodidad. Mi compromiso es que vivas una experiencia positiva, profesional y segura, desde la primera evaluación hasta el resultado final.",
+    "Soy el Dr. Alejandro Bacic, especialista en implantología oral y rehabilitación protésica. Mi objetivo es ayudarte a recuperar función, salud y confianza al sonreír con tratamientos bien planificados y resultados naturales.",
+    "Trabajo con un enfoque cercano y transparente: escucho tu caso, te explico cada paso y definimos juntos el mejor plan para que te sientas seguro(a) desde la primera evaluación hasta el resultado final.",
   ],
   specialtyCard: {
     badge: "Especialidad",
@@ -398,3 +396,4 @@ export const cellphoneContent = {
   text: "Estamos aquí para ayudarte a programar tu cita. Comunícate al +56 9 2715 1566 o reserva tu cita en línea.",
   ctaLabel: "Reservar ahora",
 };
+
