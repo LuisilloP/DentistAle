@@ -4,7 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { seo } from "../data/content";
 import { buildWhatsAppLink } from "../utils/whatsapp";
-import revealScript from "../scripts/reveal.ts?url";
 
 const baseSeo = seo ?? {};
 const {
@@ -108,7 +107,7 @@ const structuredData = {
     <Header />
     <slot />
     <Footer />
-    <script type="module" src={revealScript}></script>
+    <script src="/js/reveal.js" defer></script>
   </body>
 </html>
 

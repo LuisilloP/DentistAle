@@ -249,6 +249,11 @@ swiper-container::part(pagination) {
 }
 
 [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-ready [data-reveal] {
   opacity: 0;
   transform: translate3d(0, var(--reveal-translate, 18px), 0) scale(var(--reveal-scale, 1));
   transition:
@@ -257,7 +262,7 @@ swiper-container::part(pagination) {
   transform-origin: center;
 }
 
-.reveal-visible {
+.reveal-ready [data-reveal].reveal-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
 }
